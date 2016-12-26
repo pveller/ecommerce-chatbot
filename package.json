@@ -1,0 +1,27 @@
+{
+  "engines": {
+    "node": "6.7.0"
+  },
+  "name": "ecommerce-chatbot",
+  "version": "1.0.0",
+  "description": "e-commerce chatbot with product recommendations",
+  "main": "app.js",
+  "dependencies": {
+    "botbuilder": "^3.3.0",
+    "lodash": "^4.16.3",
+    "request-promise-native": "^1.0.3",
+    "restify": "^4.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecommerce",
+    "chatbot",
+    "recommendations"
+  ],
+  "author": "Pavel Veller",
+  "license": "MIT"
+}
