@@ -10,7 +10,7 @@ I presented this bot on [API Strat](http://boston2016.apistrat.com/) in Boston a
 
 If you would like to run it, you would need:
 * A [Moltin](https://moltin.com) subscription with the [Adventure Works](https://msftdbprodsamples.codeplex.com/releases/view/125550) data (I shared [scripts to load it](https://github.com/pveller/adventureworks-moltin))
-* Three [Azure Search](https://azure.microsoft.com/en-us/services/search) indexes - `categories`, `products`, and `variants`. You will find the index definition in [`/indexes`](/indexes) and I will soon share the script that creates indexes and loads the data
+* Three [Azure Search](https://azure.microsoft.com/en-us/services/search) indexes - `categories`, `products`, and `variants`. You can find the index definition in [`/indexes`](/indexes) and I will soon share the script that creates indexes and loads the data
 * [Recommendations API](https://www.microsoft.com/cognitive-services/en-us/recommendations-api) endpoint with the FBT (frequently bought together) model trained on historical orders. I will soon share the scripts that loads the data and trains the model
 
 ## Details
@@ -19,7 +19,7 @@ I am recording a screencast that I will link here as soon as it's ready. In the 
 
 ## To-Do
 
-* The shopping cart is currently kept in the bot's memory (`session.privateConversationData.cart`) and does not sync to Moltin
+* The shopping cart is currently kept in the bot's memory (`session.privateConversationData.cart`) and does not sync back to Moltin
 * Checkout process is not integrated with Moltin
 
 ## License
