@@ -28,7 +28,7 @@ Deploy your bot (I used [Azure App Service](https://azure.microsoft.com/en-us/se
 
 ## Details
 
-I am recording a screencast that I will link here as soon as it's ready. In the meantime, please feel free to browse the source code. 
+I am recording a screencast that I will link here as soon as it's ready. In the meantime, here's a very simple [screen recording of my conversation with the bot](https://www.dropbox.com/s/hzrgzeivroe2n91/conversation.mov?dl=0) and feel free to browse the source code.
 
 ## To-Do
 
