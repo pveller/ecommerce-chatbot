@@ -1,0 +1,3830 @@
+{
+  "luis_schema_version": "1.3.0",
+  "name": "commercehcat",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "Checkout"
+    },
+    {
+      "name": "Explore"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "ShowCart"
+    },
+    {
+      "name": "ShowTopCategories"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Detail"
+    },
+    {
+      "name": "Entity"
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [],
+  "actions": [
+    {
+      "actionName": "Explore",
+      "intentName": "Explore",
+      "channel": null,
+      "actionParameters": [
+        {
+          "parameterName": "Entity",
+          "entityName": "Entity",
+          "required": true,
+          "question": "",
+          "phraseListFeatureName": null
+        },
+        {
+          "parameterName": "Detail",
+          "entityName": "Detail",
+          "required": false,
+          "question": "",
+          "phraseListFeatureName": null
+        }
+      ]
+    }
+  ],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "what have you got?",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "show me around please",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "what's in store?",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "what do you have",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "alright. tell me what you have?",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "what do you have?",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "alright. so what do you have?",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "what kind of bikes do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "do you have mountain bikes?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what kind of accessories?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what helmets?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "can you show me helmets?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i need some handlebars",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of bike racks do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what kind of touring bikes?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "can you show me the bikes?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "please show me bottom brackets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i need some bib-shorts",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "what kind of handlebars do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me pedals",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some derailleurs",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i would like to see road frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "Entity",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "i need some cleaners",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "interested in saddles",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "interested in tights",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "i would like to see saddles",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "i need some bike racks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i need some bottom brackets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i need some mountain bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i need some touring bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i would like to see bike racks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "Entity",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "i would like to see mountain frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "Entity",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "i would like to see bib-shorts",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "Entity",
+          "startPos": 7,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "i would like to see bottom brackets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "Entity",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "i would like to see touring frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "Entity",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "i would like to see road bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "Entity",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "what kind of bottom brackets do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what kind of touring frames do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i would like to see mountain bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "Entity",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "i would like to see touring bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "Entity",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "i would like to see tires and tubes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "Entity",
+          "startPos": 7,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "please show me bottles and cages",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "i would like to see hydration packs",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "Entity",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "what kind of bike stands do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "interested in tires and tubes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i would like to see bottles and cages",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "Entity",
+          "startPos": 7,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "i would like to see caps",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "please show me hydration packs",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i would like to see jerseys",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "interested in fenders",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "what kind of fenders do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of vests do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me socks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me brakes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me locks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i need some gloves",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i would like to see headsets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "please show me chains",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i would like to see pumps",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "i need some forks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i would like to see wheels",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "i need some lights",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "interested in bike stands",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of bib-shorts do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "what kind of hydration packs do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what kind of road frames do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "interested in bib-shorts",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "please show me bike stands",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "interested in vests",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "i would like to see tights",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "what kind of forks do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of wheels do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of lights do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me forks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i would like to see bike stands",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "Entity",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "i need some socks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i would like to see vests",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "i would like to see cleaners",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "interested in hydration packs",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i need some brakes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of socks do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of brakes do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of locks do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of chains do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i would like to see lights",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "what kind of pedals do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i need some tights",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i would like to see gloves",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "i would like to see forks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "show me some hydration packs",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "interested in caps",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "i need some locks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i would like to see brakes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "i need some chains",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "interested in pumps",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "what kind of mountain frames do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i would like to see pedals",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "interested in jerseys",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "what kind of road bikes do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "please show me bib-shorts",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "i need some pumps",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i need some jerseys",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "interested in headsets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "please show me road frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "please show me bike racks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "show me some bottom brackets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i need some hydration packs",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i would like to see locks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "i would like to see chains",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "interested in wheels",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "i need some tires and tubes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "i need some bottles and cages",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "what kind of headsets do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some bib-shorts",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "what kind of helmets do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i would like to see fenders",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "i need some wheels",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i would like to see handlebars",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "i need some caps",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some bike stands",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what kind of mountain bikes do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i need some headsets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "interested in bottom brackets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i need some saddles",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of touring bikes do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "please show me mountain frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "show me some bike racks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what kind of shorts do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me road bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i would like to see socks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "what kind of cleaners do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of gloves do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of saddles do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i need some bike stands",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "interested in lights",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "show me some road frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i would like to see helmets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "interested in cleaners",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "please show me touring frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "interested in gloves",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "what kind of caps do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me cleaners",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me gloves",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "interested in bike racks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me helmets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me mountain bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "interested in road frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i would like to see shorts",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "please show me touring bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "interested in mountain frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me shorts",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some mountain frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "show me some road bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what kind of derailleurs do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of panniers do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i need some road frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what kind of cranksets do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some mountain bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "show me some touring frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "interested in road bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i need some mountain frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i would like to see derailleurs",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "interested in touring frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i need some road bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i would like to see cranksets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "i need some shorts",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "interested in mountain bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i would like to see panniers",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "show me some touring bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i need some touring frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "interested in touring bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i need some cranksets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me fenders",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "interested in forks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "interested in pedals",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "interested in chains",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "please show me vests",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some bottles and cages",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "please show me cranksets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i need some vests",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some pedals",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some socks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i need some panniers",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i need some derailleurs",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me panniers",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "interested in shorts",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "please show me saddles",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me wheels",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some shorts",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i need some helmets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i need some pedals",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me tights",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some fenders",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some tights",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of pumps do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of jerseys do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some locks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some gloves",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me pumps",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some lights",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of bottles and cages do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "please show me lights",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "interested in locks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "interested in derailleurs",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "interested in panniers",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "show me some cranksets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of tires and tubes do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "i need some fenders",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of tights do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me headsets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me caps",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me jerseys",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some saddles",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some forks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some cleaners",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "interested in helmets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "please show me handlebars",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some vests",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "interested in brakes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "show me some pumps",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "please show me tires and tubes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "show me some headsets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some tires and tubes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "show me some handlebars",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some wheels",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "interested in handlebars",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "please show me derailleurs",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some helmets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some brakes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some chains",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me some jerseys",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "interested in bottles and cages",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "show me some panniers",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "interested in cranksets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "interested in socks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "show me some caps",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what about bikes?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "maybe you have frames?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "maybe you've got wheels?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "do you have bikes?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what touring bikes?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "what touring bikes do you have",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "alright. what kind of bikes do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "do you sell bikes?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "can you show me road bikes please?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "do you have touring bikes/",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what now. you don’t talk to me?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "rear wheels please",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "Entity",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "what’s in store",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "what do you sell again?",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "do you have bikes>",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "so what do you sell again?",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "do you have bikes/",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "can you show me touring bikes?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "can you show me touring bikes/",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "touring bikes please",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "Entity",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "show me touring bikes please",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of clothing do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "can you show me shorts please?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "do you have accessories?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "can you show me road bikes again?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "cleaners",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "show me touring bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me mountain bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me accessories",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "do you have accessories",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me clothing",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "show me touring bikes again",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i am interested in mountain bikes, did you have some?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "what kind of road bikes?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "show me touring bikes that you have",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of clothing?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me your touring bikes pelase",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "can you show me touring bikes again?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "show me road bikes you have",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "cleaners please",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "can you show me bikes plesae",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "show me the bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "mountain bikes please",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "Entity",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "do you have touring bikes?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Entity",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what bikes do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "show me road bikes that you have",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me touring bikes plesae",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "touring bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "Entity",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "i like bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "i would like to buy myself a mountain bike",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "Entity",
+          "startPos": 8,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "and where are you now?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what other products do you have?",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "what about accessories?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "what do you have/",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "i’d like to look at fenders",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 7,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "do you have shirts?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me what you got",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "can i see my shopping cart?",
+      "intent": "ShowCart",
+      "entities": []
+    },
+    {
+      "text": "what's in my shopping cart?",
+      "intent": "ShowCart",
+      "entities": []
+    },
+    {
+      "text": "what's in my cart?",
+      "intent": "ShowCart",
+      "entities": []
+    },
+    {
+      "text": "show me my shopping cart please",
+      "intent": "ShowCart",
+      "entities": []
+    },
+    {
+      "text": "what's in my cart",
+      "intent": "ShowCart",
+      "entities": []
+    },
+    {
+      "text": "what's in my shopping cart",
+      "intent": "ShowCart",
+      "entities": []
+    },
+    {
+      "text": "show me some bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me my cart please",
+      "intent": "ShowCart",
+      "entities": []
+    },
+    {
+      "text": "show me components please",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "ready to checkout",
+      "intent": "Checkout",
+      "entities": []
+    },
+    {
+      "text": "checkout",
+      "intent": "Checkout",
+      "entities": []
+    },
+    {
+      "text": "check me out please",
+      "intent": "Checkout",
+      "entities": []
+    },
+    {
+      "text": "checkout please",
+      "intent": "Checkout",
+      "entities": []
+    },
+    {
+      "text": "all good and ready to checkout",
+      "intent": "Checkout",
+      "entities": []
+    },
+    {
+      "text": "all set and ready to checkout",
+      "intent": "Checkout",
+      "entities": []
+    },
+    {
+      "text": "will you show me my shopping cart?",
+      "intent": "ShowCart",
+      "entities": []
+    },
+    {
+      "text": "can you show me my cart?",
+      "intent": "ShowCart",
+      "entities": []
+    },
+    {
+      "text": "so what do you have?",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "what kind of components",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "road bikes i think",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "Entity",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "show me bikes please",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "what about lights?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    }
+  ]
+}
