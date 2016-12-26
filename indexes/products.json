@@ -1,0 +1,152 @@
+{
+    "name": "products",
+    "fields": [
+        {
+            "name": "id",
+            "type": "Edm.String",
+            "searchable": false,
+            "filterable": true,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": false,
+            "key": true,
+            "analyzer": null
+        },
+        {
+            "name": "title",
+            "type": "Edm.String",
+            "searchable": true,
+            "filterable": true,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": false,
+            "key": false,
+            "analyzer": "standard.lucene"
+        },
+        {
+            "name": "description",
+            "type": "Edm.String",
+            "searchable": true,
+            "filterable": false,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": false,
+            "key": false,
+            "analyzer": "standard.lucene"
+        },
+        {
+            "name": "category",
+            "type": "Edm.String",
+            "searchable": true,
+            "filterable": true,
+            "retrievable": true,
+            "sortable": true,
+            "facetable": true,
+            "key": false,
+            "analyzer": "standard.lucene"
+        },
+        {
+            "name": "categoryId",
+            "type": "Edm.String",
+            "searchable": false,
+            "filterable": true,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": false,
+            "key": false,
+            "analyzer": null
+        },
+        {
+            "name": "subcategory",
+            "type": "Edm.String",
+            "searchable": true,
+            "filterable": true,
+            "retrievable": true,
+            "sortable": true,
+            "facetable": true,
+            "key": false,
+            "analyzer": "standard.lucene"
+        },
+        {
+            "name": "subcategoryId",
+            "type": "Edm.String",
+            "searchable": false,
+            "filterable": true,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": false,
+            "key": false,
+            "analyzer": null
+        },
+        {
+            "name": "modifiers",
+            "type": "Collection(Edm.String)",
+            "searchable": false,
+            "filterable": false,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": false,
+            "key": false,
+            "analyzer": null
+        },
+        {
+            "name": "color",
+            "type": "Collection(Edm.String)",
+            "searchable": true,
+            "filterable": true,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": true,
+            "key": false,
+            "analyzer": "standard.lucene"
+        },
+        {
+            "name": "size",
+            "type": "Collection(Edm.String)",
+            "searchable": true,
+            "filterable": true,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": true,
+            "key": false,
+            "analyzer": "standard.lucene"
+        },
+        {
+            "name": "price",
+            "type": "Edm.Double",
+            "searchable": false,
+            "filterable": false,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": true,
+            "key": false,
+            "analyzer": null
+        },
+        {
+            "name": "image_domain",
+            "type": "Edm.String",
+            "searchable": false,
+            "filterable": false,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": false,
+            "key": false,
+            "analyzer": null
+        },
+        {
+            "name": "image_suffix",
+            "type": "Edm.String",
+            "searchable": false,
+            "filterable": false,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": false,
+            "key": false,
+            "analyzer": null
+        }
+    ],
+    "scoringProfiles": [],
+    "defaultScoringProfile": "",
+    "corsOptions": null,
+    "suggesters": []
+}

@@ -1,0 +1,58 @@
+{
+    "name": "categories",
+    "fields": [
+        {
+            "name": "id",
+            "type": "Edm.String",
+            "searchable": false,
+            "filterable": false,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": false,
+            "key": true,
+            "analyzer": null
+        },
+        {
+            "name": "title",
+            "type": "Edm.String",
+            "searchable": true,
+            "filterable": false,
+            "retrievable": true,
+            "sortable": true,
+            "facetable": false,
+            "key": false,
+            "analyzer": "standard.lucene"
+        },
+        {
+            "name": "description",
+            "type": "Edm.String",
+            "searchable": true,
+            "filterable": false,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": false,
+            "key": false,
+            "analyzer": "standard.lucene"
+        },
+        {
+            "name": "parent",
+            "type": "Edm.String",
+            "searchable": false,
+            "filterable": true,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": false,
+            "key": false,
+            "analyzer": null
+        }
+    ],
+    "scoringProfiles": [],
+    "defaultScoringProfile": "",
+    "corsOptions": {
+        "allowedOrigins": [
+            "*"
+        ],
+        "maxAgeInSeconds": 300
+    },
+    "suggesters": []
+}
