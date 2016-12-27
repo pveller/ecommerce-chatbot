@@ -20,16 +20,16 @@ If you would like to run it, you would need:
 * [Recommendations API](https://www.microsoft.com/cognitive-services/en-us/recommendations-api) endpoint with the FBT (frequently bought together) model trained on historical orders. I will soon share the script that loads the data and trains the model
 * Trained [LUIS](https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis) model for the intents that require NLU to be recognized. You can import [the app that I trained](/luis) to get a head start
 
-Deploy your bot (I used [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/)) and register with the [dev.botframework.com](https://dev.botframework.com/).
+Deploy your bot (I used [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/)) and register it with the [dev.botframework.com](https://dev.botframework.com/).
 
 Set the following environment variables:
 * `MICROSOFT_APP_ID` - you will get it from the [dev.botframework.com](https://dev.botframework.com/) during registration
 * `MICROSFT_APP_PASSWORD` - you will get it from the [dev.botframework.com](https://dev.botframework.com/) during registration
 * `RECOMMENDATION_API_KEY` - your API key to the [Recommendations API](https://www.microsoft.com/cognitive-services/en-us/recommendations-api) service from the [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services/)
-* `RECOMMENDATION_MODEL`- you can create multiple recommendation models and this way you can chose which one the bot will use for suggestions
-* `RECOMMENDATION_BUILD` - a given model (your product catalog, historical transactions, and business rules) can have multiple recommendation builds and this is how you tell which one will the bot use
-* `SEARCH_APP_NAME` - the name of your [Azure Search](https://azure.microsoft.com/en-us/services/search) service. The code assumes that you have all three indexes in the same Azure Search resource.
-* `SEARCH_API_KEY`- your API key to the [Azure Search](https://azure.microsoft.com/en-us/services/search) service.
+* `RECOMMENDATION_MODEL`- you can create multiple recommendation models and this way you can choose which one the bot will use for suggestions
+* `RECOMMENDATION_BUILD` - a given model (your product catalog, historical transactions, and business rules) can have multiple recommendation builds and this is how you tell which one the bot will use
+* `SEARCH_APP_NAME` - the name of your [Azure Search](https://azure.microsoft.com/en-us/services/search) service. The code assumes that you have all three indexes in the same Azure Search resource
+* `SEARCH_API_KEY`- your API key to the [Azure Search](https://azure.microsoft.com/en-us/services/search) service
 * `LUIS_ENDPOINT` - the URL of your published LUIS model (important: https://github.com/Microsoft/BotBuilder/issues/1633)
 
 ## To-Do
