@@ -8,6 +8,10 @@ An example of a chatbot built with [Microsoft Bot Framework](https://dev.botfram
 
 I presented this bot on [API Strat](http://boston2016.apistrat.com/) in Boston as an example of a [smart app built with cognitive APIs](http://boston2016.apistrat.com/speakers/pavel-veller).
 
+## Video
+
+I am recording a screencast that I will link here as soon as it's ready. In the meantime, here's a very simple [screen recording of my conversation with the bot](https://www.dropbox.com/s/hzrgzeivroe2n91/conversation.mov?dl=0) and feel free to browse the source code.
+
 ## How To Run
 
 If you would like to run it, you would need:
@@ -16,20 +20,17 @@ If you would like to run it, you would need:
 * [Recommendations API](https://www.microsoft.com/cognitive-services/en-us/recommendations-api) endpoint with the FBT (frequently bought together) model trained on historical orders. I will soon share the scripts that loads the data and trains the model
 * Trained [LUIS](https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis) model for the intents that require NLU to be recognized. You can import [the app that I trained](/luis) to get a head start
 
-Set the following environment variables:
-* `MICROSOFT_APP_ID`
-* `MICROSFT_APP_PASSWORD`
-* `RECOMMENDATION_API_KEY`
-* `RECOMMENDATION_MODEL`
-* `RECOMMENDATION_BUILD`
-* `SEARCH_API_KEY`
-* `LUIS_ENDPOINT` (note: https://github.com/Microsoft/BotBuilder/issues/1633)
-
 Deploy your bot (I used [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/)) and register with the [dev.botframework.com](https://dev.botframework.com/).
 
-## Details
-
-I am recording a screencast that I will link here as soon as it's ready. In the meantime, here's a very simple [screen recording of my conversation with the bot](https://www.dropbox.com/s/hzrgzeivroe2n91/conversation.mov?dl=0) and feel free to browse the source code.
+Set the following environment variables:
+* `MICROSOFT_APP_ID` - you will get it from the [dev.botframework.com](https://dev.botframework.com/) during registration
+* `MICROSFT_APP_PASSWORD` - you will get it from the [dev.botframework.com](https://dev.botframework.com/) during registration
+* `RECOMMENDATION_API_KEY` - your API key to the [Recommendations API](https://www.microsoft.com/cognitive-services/en-us/recommendations-api) service from the [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services/)
+* `RECOMMENDATION_MODEL`- you can create multiple recommendation models and this way you can chose which one the bot will use for suggestions
+* `RECOMMENDATION_BUILD` - a given model (your product catalog, historical transactions, and business rules) can have multiple recommendation builds and this is how you tell which one will the bot use
+* `SEARCH_APP_NAME` - the name of your [Azure Search](https://azure.microsoft.com/en-us/services/search) service. The code assumes that you have all three indexes in the same Azure Search resource.
+* `SEARCH_API_KEY`- your API key to the [Azure Search](https://azure.microsoft.com/en-us/services/search) service.
+* `LUIS_ENDPOINT` - the URL of your published LUIS model (important: https://github.com/Microsoft/BotBuilder/issues/1633)
 
 ## To-Do
 

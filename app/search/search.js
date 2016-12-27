@@ -1,11 +1,13 @@
 const request = require('request-promise-native');
 const _ = require('lodash');
 
+const searchApp = process.env.SEARCH_APP_NAME;
 const apiKey = process.env.SEARCH_API_KEY;
+
 const indexes = {
-    categories: 'https://commercechat.search.windows.net/indexes/categories/docs?api-version=2015-02-28',
-    products: 'https://commercechat.search.windows.net/indexes/products/docs?api-version=2015-02-28',
-    variants: 'https://commercechat.search.windows.net/indexes/variants/docs?api-version=2015-02-28'
+    categories: `https://${searchApp}.search.windows.net/indexes/categories/docs?api-version=2015-02-28`,
+    products: `https://${searchApp}.search.windows.net/indexes/products/docs?api-version=2015-02-28`,
+    variants: `https://${searchApp}.search.windows.net/indexes/variants/docs?api-version=2015-02-28`
 };
 
 const search = (index, query) => {
