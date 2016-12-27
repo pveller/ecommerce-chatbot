@@ -15,9 +15,9 @@ I am recording a screencast that I will link here as soon as it's ready. In the 
 ## How To Run
 
 If you would like to run it, you would need:
-* A [Moltin](https://moltin.com) subscription with the [Adventure Works](https://msftdbprodsamples.codeplex.com/releases/view/125550) data (I shared [scripts to load it](https://github.com/pveller/adventureworks-moltin))
-* Three [Azure Search](https://azure.microsoft.com/en-us/services/search) indexes - `categories`, `products`, and `variants`. You can find the index definition [here](/indexes) and I will soon share the script that creates indexes and loads the data
-* [Recommendations API](https://www.microsoft.com/cognitive-services/en-us/recommendations-api) endpoint with the FBT (frequently bought together) model trained on historical orders. I will soon share the scripts that loads the data and trains the model
+* A [Moltin](https://moltin.com) subscription with the [Adventure Works](https://msftdbprodsamples.codeplex.com/releases/view/125550) data (I shared [scripts to import Adventure Works data into Moltin](https://github.com/pveller/adventureworks-moltin))
+* [Azure Search](https://azure.microsoft.com/en-us/services/search) service with three indexes - `categories`, `products`, and `variants`. You can find the index definitions [here](/indexes) and I will soon share the script that creates indexes and loads the data
+* [Recommendations API](https://www.microsoft.com/cognitive-services/en-us/recommendations-api) endpoint with the FBT (frequently bought together) model trained on historical orders. I will soon share the script that loads the data and trains the model
 * Trained [LUIS](https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis) model for the intents that require NLU to be recognized. You can import [the app that I trained](/luis) to get a head start
 
 Deploy your bot (I used [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/)) and register with the [dev.botframework.com](https://dev.botframework.com/).
