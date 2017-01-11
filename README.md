@@ -10,7 +10,7 @@ I presented this bot on [API Strat](http://boston2016.apistrat.com/) in Boston a
 
 ## Video
 
-I am recording a screencast that I will link here as soon as it's ready. In the meantime, here's a very simple [screen recording of my conversation with the bot](https://www.dropbox.com/s/hzrgzeivroe2n91/conversation.mov?dl=0) and feel free to browse the source code.
+[![Ecommerce Chatbot Video](/img/screencast.png)](https://www.youtube.com/watch?v=uDar3aLdM_M)
 
 ## How To Run
 
