@@ -7,10 +7,10 @@
   "description": "e-commerce chatbot with product recommendations",
   "main": "app.js",
   "dependencies": {
-    "botbuilder": "^3.3.0",
-    "lodash": "^4.16.3",
+    "botbuilder": "^3.7.0",
+    "lodash": "^4.17.4",
     "request-promise-native": "^1.0.3",
-    "restify": "^4.1.1"
+    "restify": "^4.3.0"
   },
   "devDependencies": {},
   "scripts": {
