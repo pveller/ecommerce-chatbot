@@ -18,7 +18,10 @@ const search = (index, query) => {
         const obj = JSON.parse(result);
         console.log(`Searched ${index} for [${query}] and found ${obj && obj.value && obj.value.length} results`);
         return obj.value;
-    });    
+    }).catch((error) => {
+        console.error(error);
+        return [];
+    })
 }
 
 const searchCategories = (query) => search('categories', query);
