@@ -97,7 +97,8 @@ module.exports = {
     find: function (query) {
         // search for products and categories and then decide what it is based on best match
 
-        // ToDo: also need to search for a category and then products in it if its @search.score is higher than a full text product search
+        // ToDo: also need to search for a category and then products in it 
+        // if its @search.score is higher than a full text product search
         return Promise.all([
             this.findSubcategoriesByParentTitle(query),
             this.findProducts(`search=${query}`)
