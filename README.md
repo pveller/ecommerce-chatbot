@@ -30,7 +30,7 @@ Set the following environment variables:
 * `RECOMMENDATION_BUILD` - a given model (your product catalog, historical transactions, and business rules) can have multiple recommendation builds and this is how you tell which one the bot will use
 * `SEARCH_APP_NAME` - the name of your [Azure Search](https://azure.microsoft.com/en-us/services/search) service. The code assumes that you have all three indexes in the same Azure Search resource
 * `SEARCH_API_KEY`- your API key to the [Azure Search](https://azure.microsoft.com/en-us/services/search) service
-* `LUIS_ENDPOINT` - the URL of your published LUIS model (important: https://github.com/Microsoft/BotBuilder/issues/1633)
+* `LUIS_ENDPOINT` - the URL of your published LUIS model. Please keep the `Add verbose flag` on and remove `&q=` from the URL. THe bot framework will add it.
 
 ## To-Do
 
