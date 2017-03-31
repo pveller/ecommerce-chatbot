@@ -21,18 +21,6 @@ const connector = new builder.ChatConnector({
     appPassword: process.env.MICROSFT_APP_PASSWORD
 });
 
-
-const server = restify.createServer();
-server.listen(process.env.port || process.env.PORT || 3978, function () {
-    console.log('%s listening to %s', server.name, server.url);
-});
-server.get('/', function (req, res, next) {
-    // ToDo: serve a nice static landing page
-    res.send(200, 'A prototype of a commerce chatbot with product recommendations');
-    return next();
-});
-server.post('/api/messages', connector.listen());
-
 const bot = new builder.UniversalBot(connector);
 
 var intents = new builder.IntentDialog({
@@ -105,4 +93,15 @@ bot.dialog('/checkout', [
             session.endDialog('Alright! You are all set!');
         }
     }
-])
+]);
+
+const server = restify.createServer();
+server.listen(process.env.port || process.env.PORT || 3978, function () {
+    console.log('%s listening to %s', server.name, server.url);
+});
+server.get(/.*/, restify.serveStatic({
+    'directory': '.',
+    'default': 'index.html'
+}));
+server.post('/api/messages', connector.listen());
+

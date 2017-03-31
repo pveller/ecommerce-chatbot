@@ -18,7 +18,10 @@ const search = (index, query) => {
         const obj = JSON.parse(result);
         console.log(`Searched ${index} for [${query}] and found ${obj && obj.value && obj.value.length} results`);
         return obj.value;
-    });    
+    }).catch((error) => {
+        console.error(error);
+        return [];
+    })
 }
 
 const searchCategories = (query) => search('categories', query);
@@ -94,7 +97,8 @@ module.exports = {
     find: function (query) {
         // search for products and categories and then decide what it is based on best match
 
-        // ToDo: also need to search for a category and then products in it if its @search.score is higher than a full text product search
+        // ToDo: also need to search for a category and then products in it 
+        // if its @search.score is higher than a full text product search
         return Promise.all([
             this.findSubcategoriesByParentTitle(query),
             this.findProducts(`search=${query}`)
