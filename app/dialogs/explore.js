@@ -65,8 +65,6 @@ const listProducts = (session, products, start = 0) => {
 module.exports = function (bot) {
     bot.dialog('/explore', [
         function (session, args, next) {
-            session.send(session.message.address.conversation.id);
-
             const query = extractQuery(session, args);
 
             if (!query) {

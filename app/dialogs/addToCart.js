@@ -69,7 +69,7 @@ const showRecommendations = function (session) {
         
         session.endDialog(new builder.Message(session)
             .attachments(tiles)
-            .attachmentLayout(builder.AttachmentLayout.carousel));
+            .attachmentLayout(builder.AttachmentLayout.list));
     });
 }
 
