@@ -15,7 +15,7 @@ const displayCart = function(session, cart) {
     session.sendTyping();
     session.send(new builder.Message(session, `You have ${cart.length} products in your cart`)
         .attachments(cards)
-        .attachmentLayout(builder.AttachmentLayout.carousel));
+        .attachmentLayout(builder.AttachmentLayout.list));
 };
 
 module.exports = function (bot) {
