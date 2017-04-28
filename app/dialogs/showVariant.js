@@ -11,7 +11,7 @@ const showVariant = function(session, variant) {
         .title(product.title)
         .subtitle(`$${variant.price}`)
         .text(description || product.description)
-        .buttons([builder.CardAction.postBack(session, `/add:${variant.id}`, 'Add To Cart')])
+        .buttons([builder.CardAction.postBack(session, `@add:${variant.id}`, 'Add To Cart')])
         .images([builder.CardImage.create(session, `https://${product.image_domain}${product.image_suffix}`)]);
 
     session.send(new builder.Message(session)

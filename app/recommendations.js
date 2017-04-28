@@ -16,8 +16,6 @@ module.exports = {
                  `&includeMetadata=false`,
             headers: { 'Ocp-Apim-Subscription-Key': `${apiKey}` }
         }).then((result) => {
-            console.log(result);
-
             const obj = JSON.parse(result) || {};
 
             return obj.recommendedItems;

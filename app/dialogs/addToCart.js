@@ -61,7 +61,7 @@ const showRecommendations = function (session) {
             .title(e.items[0].name)
             .subtitle(`$${e.variant.price}`)
             .text(e.reasoning)
-            .buttons([builder.CardAction.imBack(session, `/add:${e.variant.id}`, 'Add To Cart')])
+            .buttons([builder.CardAction.postBack(session, `@add:${e.variant.id}`, 'Add To Cart')])
             .images([
                 builder.CardImage.create(session, `https://${e.variant.image_domain}${e.variant.image_suffix}`)
             ])
