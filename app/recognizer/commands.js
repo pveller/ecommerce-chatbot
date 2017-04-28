@@ -86,7 +86,7 @@ module.exports = {
     recognize: function (context, callback) {
         const text = context.message.text;
 
-        if (!text.startsWith('/') && !['next', 'more'].includes(text)) {
+        if (!text.startsWith('@') && !['next', 'more'].includes(text)) {
             callback.call(null, null, unrecognized);
         } else {
             callback.call(null, null, parse.parse(context, text));

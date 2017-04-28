@@ -6,7 +6,7 @@ const displayCart = function(session, cart) {
         .subtitle(`$${item.variant.price}`)
         .text(`${item.variant.color ? 'Color -' + item.variant.color + '\n' : ''}` +
               `${item.variant.size ? 'Size -' + item.variant.size : ''}` || item.product.description)
-        .buttons([builder.CardAction.postBack(session, `/remove:${item.variant.id}`, 'Remove')])
+        .buttons([builder.CardAction.postBack(session, `@remove:${item.variant.id}`, 'Remove')])
         .images([
             builder.CardImage.create(session, `https://${item.variant.image_domain}${item.variant.image_suffix}`)
         ])

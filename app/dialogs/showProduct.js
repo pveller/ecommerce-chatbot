@@ -9,7 +9,7 @@ const showProduct = function (session, product) {
         .subtitle(`$${product.price}`)
         .text(product.description)
         .buttons(product.modifiers.length === 0 || (product.size.length <= 1 && product.color.length <= 1)
-            ? [builder.CardAction.postBack(session, `/add:${product.id}`, 'Add To Cart')]
+            ? [builder.CardAction.postBack(session, `@add:${product.id}`, 'Add To Cart')]
             : [])
         .images([
             builder.CardImage.create(session, `https://${product.image_domain}${product.image_suffix}`)

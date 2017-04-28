@@ -44,11 +44,11 @@ const listProducts = (session, products, start = 0) => {
         .title(p.title)
         .subtitle(`$${p.price}`)
         .text(p.description)
-        .buttons([builder.CardAction.postBack(session, `/show:${p.id}`, 'Show me')])
+        .buttons([builder.CardAction.postBack(session, `@show:${p.id}`, 'Show me')])
         .images([
             builder.CardImage
                 .create(session, `https://${p.image_domain}${p.image_suffix}`)
-                .tap(builder.CardAction.postBack(session, `/show:${p.id}`))
+                .tap(builder.CardAction.postBack(session, `@show:${p.id}`))
         ])
     );
 
@@ -78,40 +78,18 @@ module.exports = function (bot) {
             session.sendTyping();
 
             const query = args.response;
-
-            // ToDo: also need to search for products in the category
-            search.find(query).then(({subcategories, products}) => {
-                if (subcategories.length) {
-                    // ToDo: this is updating the state. Time to use Redux maybe?
-                    session.privateConversationData = Object.assign({}, session.privateConversationData, {
-                        list: {
-                            type: 'categories',
-                            data: subcategories
-                        },
-                        pagination: {
-                            start: 0
-                        }
-                    });
-                    session.save();
-
-                    listCategories(session, subcategories);
-                } else if (products.length) {
-                    session.privateConversationData = Object.assign({}, session.privateConversationData, {
-                        list: {
-                            type: 'products',
-                            data: products
-                        },
-                        pagination: {
-                            start: 0
-                        }
-                    });
-                    session.save();
-
-                    listProducts(session, products)
-                } else {
-                    session.endDialog(`I tried looking for ${query} but I couldn't find anything, sorry!`);
-                }
-            });
+            
+            search
+                .find(query)
+                .then(({ subcategories, products }) => {
+                    if (subcategories.length) {
+                        listCategories(session, subcategories);
+                    } else if (products.length) {
+                        listProducts(session, products);
+                    } else {
+                        session.endDialog(`Nothing that looks like ${query}, sorry!`);
+                    }
+                });
         }
     ]);
 

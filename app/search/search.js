@@ -99,9 +99,11 @@ module.exports = {
 
         // ToDo: also need to search for a category and then products in it 
         // if its @search.score is higher than a full text product search
+
         return Promise.all([
             this.findSubcategoriesByParentTitle(query),
             this.findProducts(`search=${query}`)
-        ]).then(([subcategories, products]) => ({ subcategories, products }));;
+    ]).then(([subcategories, products]) => ({ subcategories, products }));;
+
     }
 };
