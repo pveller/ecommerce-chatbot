@@ -27,6 +27,7 @@ module.exports = function (bot) {
             }
 
             showVariant(session, args.variant);
+            
             session.endDialog();
         }
     ]);

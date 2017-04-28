@@ -32,6 +32,7 @@ module.exports = function (bot) {
             }
         },
         function(session, args, next) {
+            // ToDo: add sentiment
             builder.Prompts.confirm(session, 'Ready to checkout?', { 
                 listStyle: builder.ListStyle.button
             });
