@@ -33,7 +33,7 @@ var intents = new builder.IntentDialog({
     intentThreshold: 0.2,
     recognizeOrder: builder.RecognizeOrder.series
 });
- 
+
 intents.matches('Greeting', '/welcome');
 intents.matches('ShowTopCategories', '/categories');
 intents.matches('Explore', '/explore');
@@ -71,19 +71,14 @@ bot.dialog('/reset', [
 
 bot.dialog('/smileBack', [
     function (session, args, next) {
-        const smile = builder.EntityRecognizer.findEntity(args.entities, 'Smile');
-        const type = builder.EntityRecognizer.findEntity(args.entities, 'Type');
+        const smile = builder.EntityRecognizer.findEntity(args.entities, 'Smile') || { entity: ':)' };
 
-        if (!smile || !smile.entity) {
-            session.endDialog('<ss type="smile">:)</ss>');
-        } else {
-            session.endDialog(`<ss type="${type.entity}">${smile.entity}</ss>`);
-        }
+        session.endDialog(smile.entity);
     }
 ]);
 
 bot.dialog('/checkout', [
-    function(session, args, next) {
+    function (session, args, next) {
         const cart = session.privateConversationData.cart;
 
         if (!cart || !cart.length) {
