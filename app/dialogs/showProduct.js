@@ -74,7 +74,6 @@ module.exports = function (bot) {
             if (args.response) {
                 session.beginDialog('/choseVariant');
             } else if (session.message.text === 'no') {
-                // ToDo: add sentiment
                 // ToDo: clean the "context" product
                 session.endDialog('Alright. I am here if you need anything else');
             } else {
