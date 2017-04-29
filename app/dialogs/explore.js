@@ -20,10 +20,13 @@ const extractQuery = (session, args) => {
 const listCategories = (session, subcategories, start = 0) => {
     // ToDo: to be saved as a pagination object on the state and the list needs to be saved too 
     const slice = subcategories.slice(start, start + 6);
-    const more = start + slice.length < subcategories.length;
+    if (slice.length === 0) {
+        return session.endDialog('That\'s it. You have seen it all. See anything you like? Just ask for it.');
+    }
 
     // ToDo: I have two displays. Cards and words. probably need a method to present it
     const message = slice.map(c => c.title).join(', ');
+    const more = start + slice.length < subcategories.length;
 
     if (!more) {
         session.endDialog(`We ${start > 0 ? 'also ' : ''}have ${message}. See anything you like? Just ask for it.`);
@@ -38,7 +41,9 @@ const listCategories = (session, subcategories, start = 0) => {
 const listProducts = (session, products, start = 0) => {
     // ToDo: need to filter out products with very small @search.score
     const slice = products.slice(start, start + 4);
-    // ToDo: to be saved as a pagination object on the state and the list needs to be saved too
+    if (slice.length === 0) {
+        return session.endDialog('That\'s it. You have seen it all. See anything you like? Just ask for it.');
+    }
 
     const cards = slice.map(p => new builder.ThumbnailCard(session)
         .title(p.title)
