@@ -78,16 +78,39 @@ module.exports = function (bot) {
             session.sendTyping();
 
             const query = args.response;
-            
+
+            // ToDo: also need to search for products in the category
             search
                 .find(query)
                 .then(({ subcategories, products }) => {
                     if (subcategories.length) {
+                        session.privateConversationData = Object.assign({}, session.privateConversationData, {
+                            list: {
+                                type: 'categories',
+                                data: subcategories
+                            },
+                            pagination: {
+                                start: 0
+                            }
+                        });
+                        session.save();
+
                         listCategories(session, subcategories);
                     } else if (products.length) {
-                        listProducts(session, products);
+                        session.privateConversationData = Object.assign({}, session.privateConversationData, {
+                            list: {
+                                type: 'products',
+                                data: products
+                            },
+                            pagination: {
+                                start: 0
+                            }
+                        });
+                        session.save();
+
+                        listProducts(session, products)
                     } else {
-                        session.endDialog(`Nothing that looks like ${query}, sorry!`);
+                        session.endDialog(`I tried looking for ${query} but I couldn't find anything, sorry!`);
                     }
                 });
         }
