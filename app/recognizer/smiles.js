@@ -9,6 +9,8 @@ module.exports = {
         const text = context.message.text;
         const channel = context.message.address.channelId;
 
+        console.log('Looking for smile in [%s] on [%s]', text, channel);
+
         if (!detectors[channel]) {
             return callback.call();
         }
@@ -17,6 +19,8 @@ module.exports = {
         if (!smiles) {
             return callback.call();
         }
+
+        console.log('Sending back a smily face %s', smiles[1]);
 
         callback.call(null, null, {
             intent: 'Smile',
