@@ -1,6 +1,7 @@
 module.exports = {
     recognize: function(context, callback) {
         const text = context.message.text.replace(/\s/g, '');
+        // ToDo: support smiles across channels
         const smiles = text.match(/<sstype="(\w+?)">(.+?)<\/ss>/);
 
         if (smiles) {            

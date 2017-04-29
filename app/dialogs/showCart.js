@@ -1,4 +1,5 @@
 const builder = require('botbuilder');
+const sentiment = require('../sentiment');
 
 const displayCart = function(session, cart) {
     const cards = cart.map(item => new builder.ThumbnailCard(session)
@@ -31,11 +32,7 @@ module.exports = function (bot) {
                 next();
             }
         },
-        function(session, args, next) {
-            builder.Prompts.confirm(session, 'Ready to checkout?', { 
-                listStyle: builder.ListStyle.button
-            });
-        },
+        ...sentiment.confirm('Ready to checkout?'),
         function(session, args, next) {
             if (args.response) {
                 session.reset('/checkout');

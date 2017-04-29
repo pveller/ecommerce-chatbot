@@ -1,6 +1,7 @@
 const builder = require('botbuilder');
 const search = require('../search/search');
 const recommendations = require('../recommendations');
+const sentiment = require('../sentiment');
 
 const lookupProductOrVariant = function (session, id, next) {
     session.sendTyping();
@@ -66,7 +67,7 @@ const showRecommendations = function (session) {
                 builder.CardImage.create(session, `https://${e.variant.image_domain}${e.variant.image_suffix}`)
             ])
         );
-        
+
         session.endDialog(new builder.Message(session)
             .attachments(tiles)
             .attachmentLayout(builder.AttachmentLayout.list));
@@ -92,7 +93,7 @@ module.exports = function (bot) {
             if (!variant || variant.id !== id.entity) {
                 lookupProductOrVariant(session, id.entity, next)
                     .then((variant) => {
-                        session.privateConversationData = Object.assign({}, session.privateConversationData, { 
+                        session.privateConversationData = Object.assign({}, session.privateConversationData, {
                             variant: variant || product // workaroudn for products without variants
                         });
                         session.save();
@@ -124,23 +125,24 @@ module.exports = function (bot) {
         function (session, args, next) {
             session.sendTyping();
 
-            recommendations.recommend([args.variant.sku]).then((variants) => {
-                session.sendTyping();
+            recommendations
+                .recommend([args.variant.sku])
+                .then((variants) => {
+                    session.sendTyping();
 
-                if (!variants.length) {
-                    session.reset('/showCart');
-                } else {
-                    session.dialogData = Object.assign({}, session.dialogData, {
-                        recommendations: variants
-                    });
-                    session.save();
+                    if (!variants.length) {
+                        session.reset('/showCart');
+                    } else {
+                        session.dialogData = Object.assign({}, session.dialogData, {
+                            recommendations: variants
+                        });
+                        session.save();
 
-                    builder.Prompts.confirm(session, 'I also have a few recommendations for you, would you like to see them?', {
-                        listStyle: builder.ListStyle.button
-                    });
-                }
-            });
+                        next();
+                    }
+                });
         },
+        ...sentiment.confirm('I also have a few recommendations for you, would you like to see them?'),
         function (session, args, next) {
             if (!args.response) {
                 session.endDialog('Alright. Let me know if I can help you find anything else or if you would like to see your shopping cart.');
