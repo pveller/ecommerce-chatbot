@@ -73,8 +73,7 @@ bot.dialog('/smileBack', [
     function (session, args, next) {
         const smile = builder.EntityRecognizer.findEntity(args.entities, 'Smile') || { entity: ':)' };
 
-        // ToDo: skype now fails with Error 500 when the bot attempts to send <ss></ss> markup at it
-        session.endDialog(':)');
+        session.endDialog(smile.entity);
     }
 ]);
 

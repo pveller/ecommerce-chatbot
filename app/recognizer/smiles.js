@@ -1,21 +1,29 @@
 const detectors = {
-    'emulator': /([:;]-?[\(\)DE])/,
-    'webchat': /([:;]-?[\(\)DE])/,
-    'skype': /(<ss type="\w+?">.+?<\/ss>)/
+    emulator: {
+        pattern: /([:;]-?[\(\)DE])/
+    },
+    webchat: {
+        pattern: /([:;]-?[\(\)DE])/
+    },
+    skype: {
+        pattern: /<ss type="(\w+?)">(.+?)<\/ss>/,
+        smile: 2
+    }
 }
 
 module.exports = {
     recognize: function(context, callback) {
         const text = context.message.text;
         const channel = context.message.address.channelId;
-
+        
         console.log('Looking for smile in [%s] on [%s]', text, channel);
 
-        if (!detectors[channel]) {
+        const detector = detectors[channel];
+        if (!detector) {
             return callback.call();
         }
 
-        const smiles = text.match(detectors[channel]);
+        const smiles = text.match(detector.pattern);
         if (!smiles) {
             return callback.call();
         }
@@ -26,7 +34,7 @@ module.exports = {
             intent: 'Smile',
             score: 1,
             entities: [{
-                entity: smiles[1],
+                entity: smiles[detector.smile || 1],
                 score: 1,
                 type: 'Smile'
             }]
