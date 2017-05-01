@@ -21,7 +21,9 @@ const connector = new builder.ChatConnector({
     appPassword: process.env.MICROSFT_APP_PASSWORD
 });
 
-const bot = new builder.UniversalBot(connector);
+const bot = new builder.UniversalBot(connector, {
+    persistConversationData: true
+});
 
 var intents = new builder.IntentDialog({
     recognizers: [

@@ -1,12 +1,12 @@
 const builder = require('botbuilder');
 const search = require('../search/search');
 
-const showVariant = function(session, variant) {
+const showVariant = function(session, product, variant) {
     session.sendTyping();
     
     const description = `${variant.color ? 'Color -' + variant.color + '\n' : ''}` +
                         `${variant.size ? 'Size -' + variant.size : ''}`;
-    const product = session.privateConversationData.product;
+
     const tile = new builder.HeroCard(session)
         .title(product.title)
         .subtitle(`$${variant.price}`)
@@ -22,11 +22,11 @@ const showVariant = function(session, variant) {
 module.exports = function (bot) {
     bot.dialog('/showVariant', [
         function (session, args, next) {
-            if (!args || !args.variant) {
+            if (!args || !args.product || !args.variant) {
                 return session.endDialog('Sorry, I got distracted and lost track of our conversation. Where were we?');
             }
 
-            showVariant(session, args.variant);
+            showVariant(session, args.product, args.variant);
             
             session.endDialog();
         }

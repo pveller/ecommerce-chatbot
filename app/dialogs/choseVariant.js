@@ -3,7 +3,7 @@ const builder = require('botbuilder');
 module.exports = function (bot) {
     bot.dialog('/choseVariant', [
         function (session, args, next) {
-            const item = session.privateConversationData.product;
+            const item = session.dialogData.product = args.product;
 
             if (!item.modifiers.includes('color')) {
                 next();
@@ -22,7 +22,7 @@ module.exports = function (bot) {
                 return session.endDialog('Well, sorry. Come check next time. Maybe we\'ll have it in the color you like. Thanks!');
             }
 
-            const item = session.privateConversationData.product;
+            const item = session.dialogData.product;
             // ToDo: response comes back as [true] if the user accepted the single color there was
             session.dialogData.color = args.response || item.color[0];
             session.save();
@@ -44,7 +44,7 @@ module.exports = function (bot) {
                 return session.endDialog('Well, sorry. Come check next time. Maybe we\'ll have your size in stock. Thanks!');
             }
 
-            const item = session.privateConversationData.product;
+            const item = session.dialogData.product;
 
             session.dialogData.size = args.response || item.size[0];
             session.save();

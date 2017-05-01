@@ -15,11 +15,12 @@ const lookupProductOrVariant = function (session, id, next) {
             if (product.modifiers.length === 0 || (product.size.length <= 1 && product.color.length <= 1)) {
                 session.sendTyping();
 
-                session.privateConversationData = Object.assign({}, session.privateConversationData, { product });
-                session.save();
-
-                return search.findVariantForProduct(product.id);
+                return search
+                    .findVariantForProduct(product.id)
+                    .then(variant => ({ product, variant }));
             } else {
+                // This would only happen if someone clicked Add To Cart on a multi-variant product
+                // And I don't think we give the user that option
                 session.reset('/showProduct', {
                     entities: [{
                         entity: id,
@@ -30,7 +31,17 @@ const lookupProductOrVariant = function (session, id, next) {
                 return Promise.reject();
             }
         } else if (variants.length) {
-            return variants[0];
+            const variant = variants[0];
+
+            return search
+                .findProductById(variant.productId)
+                .then(products => ({ 
+                    product : products[0], 
+                    variant 
+                }))
+                .catch(error => {
+                    console.error(error);
+                });
         } else {
             session.endDialog(`I cannot find ${id} in my product catalog, sorry!`);
             return Promise.reject();
@@ -87,36 +98,18 @@ module.exports = function (bot) {
                 return session.reset('/confused');
             }
 
-            const product = session.privateConversationData.product;
-            const variant = session.privateConversationData.variant;
-
-            if (!variant || variant.id !== id.entity) {
-                lookupProductOrVariant(session, id.entity, next)
-                    .then((variant) => {
-                        session.privateConversationData = Object.assign({}, session.privateConversationData, {
-                            variant: variant || product // workaroudn for products without variants
-                        });
-                        session.save();
-
-                        next();
-                    })
-                    .catch((error) => {
-                        console.error(error);
-                    });
-            } else {
-                next();
-            }
+            lookupProductOrVariant(session, id.entity, next)
+                .then(({ product, variant }) => next({ product, variant }))
+                .catch((error) => console.error(error));
         },
         function (session, args, next) {
-            const product = session.privateConversationData.product;
-            const variant = session.privateConversationData.variant;
+            const product = args.product;
+            const variant = args.variant;
 
-            session.sendTyping();
-            session.privateConversationData = Object.assign({}, session.privateConversationData, {
-                // save the product instead of its variant for no-variants products
-                cart: (session.privateConversationData.cart || []).concat({ product, variant })
+            session.privateConversationData.cart = (session.privateConversationData.cart || []).concat({ 
+                product, 
+                variant 
             });
-            session.save();
 
             session.send(`I have added ${describe(product, variant)} to your cart`);
 
@@ -136,7 +129,6 @@ module.exports = function (bot) {
                         session.dialogData = Object.assign({}, session.dialogData, {
                             recommendations: variants
                         });
-                        session.save();
 
                         next();
                     }

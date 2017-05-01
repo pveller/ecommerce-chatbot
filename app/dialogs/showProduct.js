@@ -44,19 +44,17 @@ module.exports = function (bot) {
             ]).then(([product, products]) => {
                 const item = product.concat(products)[0];
                 if (!item) {
-                    // ToDo: clean the "context" product
                     session.endDialog('Sorry, I couldn\'t find the product you asked about');
                     return Promise.reject();
+                } else {
+                    return item;
                 }
-                return item;
             }).then((item) => {
-                session.privateConversationData = Object.assign({}, session.privateConversationData, { product: item });
-                session.save();
-
                 showProduct(session, item);
-
                 return item;
             }).then((item) => {
+                session.dialogData.product = item;
+
                 if (item.modifiers.length === 0 || (item.size.length <= 1 && item.color.length <= 1)) {
                     next();
                 } else {
@@ -66,15 +64,13 @@ module.exports = function (bot) {
                         '. Would you like to choose one that fits you?', { listStyle: builder.ListStyle.button });
                 }
             }).catch((err) => {
-                // ToDo: clean the "context" product
                 console.error(err);
             });
         },
         function (session, args, next) {
             if (args.response) {
-                session.beginDialog('/choseVariant');
+                session.beginDialog('/choseVariant', { product: session.dialogData.product });
             } else if (session.message.text === 'no') {
-                // ToDo: clean the "context" product
                 session.endDialog('Alright. I am here if you need anything else');
             } else {
                 // no variants, can go straight to "add to card"
@@ -85,19 +81,19 @@ module.exports = function (bot) {
             const color = args && args.response && args.response.color && args.response.color.entity;
             const size = args && args.response && args.response.size && args.response.size.entity;
 
-            const product = session.privateConversationData.product;
+            // ToDo: I wonder if it's still here after we ran another dialog on top of the current one or if I need to cary it back
+            const product = session.dialogData.product;
 
-            search.findVariantForProduct(product.id, color, size).then((variant) => {
-                session.privateConversationData = Object.assign({}, session.privateConversationData, { variant });
-                session.save();
-
-                if (color || size) {
-                    session.sendTyping();
-                    session.reset('/showVariant', { variant });
-                } else {
-                    session.endDialog();
-                }
-            });
+            search
+                .findVariantForProduct(product.id, color, size)
+                .then((variant) => {
+                    if (color || size) {
+                        session.sendTyping();
+                        session.reset('/showVariant', { product, variant });
+                    } else {
+                        session.endDialog();
+                    }
+                });
         }
     ]);
 };
