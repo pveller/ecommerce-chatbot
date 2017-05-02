@@ -35,9 +35,9 @@ const lookupProductOrVariant = function (session, id, next) {
 
             return search
                 .findProductById(variant.productId)
-                .then(products => ({ 
-                    product : products[0], 
-                    variant 
+                .then(products => ({
+                    product: products[0],
+                    variant
                 }))
                 .catch(error => {
                     console.error(error);
@@ -59,23 +59,34 @@ const describe = function (product, variant) {
 const showRecommendations = function (session) {
     session.sendTyping();
 
-    Promise.all(session.dialogData.recommendations.map(r => {
+    Promise.all(session.dialogData.recommendations.map(offer => {
         return new Promise((resolve, reject) => {
-            search.findVariantBySku(r.items[0].id).then((variants) => {
-                r.variant = variants[0];
-                resolve(r);
-            });
+            search
+                .findVariantBySku(offer.items[0].id)
+                .then((variants) => {
+                    offer.variant = variants[0];
+                    return offer.variant.productId;
+                })
+                .then(productId => search.findProductById(productId))
+                .then(products => {
+                    offer.product = products[0];
+                    resolve(offer);
+                })
+                .catch(error => {
+                    console.error(error);
+                    reject(error);
+                });
         });
-    })).then((expanded) => {
+    })).then(offers => {
         session.sendTyping();
 
-        const tiles = expanded.map(e => new builder.ThumbnailCard(session)
-            .title(e.items[0].name)
-            .subtitle(`$${e.variant.price}`)
-            .text(e.reasoning)
-            .buttons([builder.CardAction.postBack(session, `@add:${e.variant.id}`, 'Add To Cart')])
+        const tiles = offers.map(offer => new builder.ThumbnailCard(session)
+            .title(offer.product.title)
+            .subtitle(`$${offer.product.price}`)
+            .text(offer.reasoning)
+            .buttons([builder.CardAction.postBack(session, `@show:${offer.product.id}`, 'Show me')])
             .images([
-                builder.CardImage.create(session, `https://${e.variant.image_domain}${e.variant.image_suffix}`)
+                builder.CardImage.create(session, `https://${offer.variant.image_domain}${offer.variant.image_suffix}`)
             ])
         );
 
@@ -106,9 +117,9 @@ module.exports = function (bot) {
             const product = args.product;
             const variant = args.variant;
 
-            session.privateConversationData.cart = (session.privateConversationData.cart || []).concat({ 
-                product, 
-                variant 
+            session.privateConversationData.cart = (session.privateConversationData.cart || []).concat({
+                product,
+                variant
             });
 
             session.send(`I have added ${describe(product, variant)} to your cart`);
@@ -126,10 +137,7 @@ module.exports = function (bot) {
                     if (!variants.length) {
                         session.reset('/showCart');
                     } else {
-                        session.dialogData = Object.assign({}, session.dialogData, {
-                            recommendations: variants
-                        });
-
+                        session.dialogData.recommendations = variants;
                         next();
                     }
                 });

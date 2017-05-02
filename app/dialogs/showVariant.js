@@ -4,8 +4,8 @@ const search = require('../search/search');
 const showVariant = function(session, product, variant) {
     session.sendTyping();
     
-    const description = `${variant.color ? 'Color -' + variant.color + '\n' : ''}` +
-                        `${variant.size ? 'Size -' + variant.size : ''}`;
+    const description = `${variant.color ? 'Color - ' + variant.color + '\n' : ''}` +
+                        `${variant.size ? 'Size - ' + variant.size : ''}`;
 
     const tile = new builder.HeroCard(session)
         .title(product.title)
