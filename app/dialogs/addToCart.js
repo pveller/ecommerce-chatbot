@@ -80,11 +80,12 @@ const showRecommendations = function (session) {
     })).then(offers => {
         session.sendTyping();
 
+        // skype doesn't understand postBack from the carousel so that's why I am using imBack for recommendations
         const tiles = offers.map(offer => new builder.ThumbnailCard(session)
             .title(offer.product.title)
             .subtitle(`$${offer.product.price}`)
             .text(offer.reasoning)
-            .buttons([builder.CardAction.postBack(session, `@show:${offer.product.id}`, 'Show me')])
+            .buttons([builder.CardAction.imBack(session, `@show:${offer.product.id}`, 'Show me')])
             .images([
                 builder.CardImage.create(session, `https://${offer.variant.image_domain}${offer.variant.image_suffix}`)
             ])
