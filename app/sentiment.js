@@ -48,18 +48,15 @@ module.exports = {
     confirm: function (question, reprompt) {
         return [
             (session, args, next) => {
-                builder.Prompts.confirm(session, question,
-                    {
-                        listStyle: builder.ListStyle.button,
-                        maxRetries: 0
-                    })
+                builder.Prompts.text(session, question);
             },
             (session, args, next) => {
-                if (args && typeof(args.response) !== 'undefined') {
+                const answer = builder.EntityRecognizer.parseBoolean(args.response);
+                if (typeof(answer) !== 'undefined') {
                     next(args);
                 } else {
-                    this.detect(session.message.text)
-                        .then(response => next(response))
+                    this.detect(args.response)
+                        .then(result => next(result))
                         .catch(error => {
                             console.error(error);
                             next();
