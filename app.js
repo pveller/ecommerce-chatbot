@@ -29,7 +29,6 @@ var intents = new builder.IntentDialog({
     recognizers: [
         commands,
         greeting,
-        smiles,
         new builder.LuisRecognizer(process.env.LUIS_ENDPOINT)
     ],
     intentThreshold: 0.2,
@@ -65,17 +64,11 @@ bot.dialog('/confused', [
     }
 ]);
 
+bot.on('routing', smiles.smileBack.bind(smiles));
+
 bot.dialog('/reset', [
     function (session, args, next) {
         session.endConversation(['See you later!', 'bye!']);
-    }
-]);
-
-bot.dialog('/smileBack', [
-    function (session, args, next) {
-        const smile = builder.EntityRecognizer.findEntity(args.entities, 'Smile') || { entity: ':)' };
-
-        session.endDialog(smile.entity);
     }
 ]);
 

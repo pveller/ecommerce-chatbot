@@ -1,43 +1,73 @@
 const detectors = {
     emulator: {
-        pattern: /([:;]-?[\(\)DE])/
+        pattern: /[:;]-?[\(\)DE]/g
     },
     webchat: {
-        pattern: /([:;]-?[\(\)DE])/
+        pattern: /[:;]-?[\(\)DE]/g
     },
     skype: {
-        pattern: /<ss type="(\w+?)">(.+?)<\/ss>/,
+        pattern: /<ss type="(\w+?)">(.+?)<\/ss>/g,
         smile: 2
     }
 }
 
 module.exports = {
-    recognize: function(context, callback) {
-        const text = context.message.text;
-        const channel = context.message.address.channelId;
-        
+
+    detect: function (text, channel) {
         console.log('Looking for smile in [%s] on [%s]', text, channel);
 
         const detector = detectors[channel];
         if (!detector) {
-            return callback.call();
+            return undefined;
         }
 
         const smiles = text.match(detector.pattern);
         if (!smiles) {
-            return callback.call();
+            return undefined;
         }
 
-        console.log('Sending back a smily face %s', smiles[1]);
+        return {
+            pattern: detector.pattern,
+            face: smiles[detector.smile || 0]
+        };
+    },
 
-        callback.call(null, null, {
-            intent: 'Smile',
-            score: 1,
-            entities: [{
-                entity: smiles[detector.smile || 1],
+    recognize: function (context, callback) {
+        const text = context.message.text;
+        const channel = context.message.address.channelId;
+
+        const smile = this.detect(text, channel);
+        if (!smile) {
+            callback();
+        } else {
+            console.log('Sending back a smily face %s', smile.face);
+
+            callback(null, {
+                intent: 'Smile',
                 score: 1,
-                type: 'Smile'
-            }]
-        });
+                entities: [{
+                    entity: smile.face,
+                    score: 1,
+                    type: 'Smile'
+                }]
+            });
+        }
+    },
+
+    smileBack: function (session) {
+        const text = session.message.text;
+        const channel = session.message.address.channelId;
+
+        const smile = this.detect(text, channel);
+
+        if (smile) {
+            session.send(smile.face);
+
+            session.message.text = session.message.text.replace(smile.pattern, '');
+
+            if (session.message.text.trim()) {
+                session.sendTyping();
+            }
+        }
     }
 };

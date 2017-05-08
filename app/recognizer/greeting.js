@@ -17,8 +17,11 @@ const greetings = [
 ];
 
 module.exports = {
-    recognize: function(context, callback) {
-        const text = context.message.text.replace(/[!?,.\/\\\[\]\{\}\(\)]/g, '').toLowerCase();
+    recognize: function (context, callback) {
+        const text = context.message.text
+            .replace(/[!?,.\/\\\[\]\{\}\(\)]/g, '')
+            .trim()
+            .toLowerCase();
 
         const recognized = {
             entities: [],
