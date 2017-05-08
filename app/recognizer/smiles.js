@@ -1,13 +1,13 @@
 const detectors = {
     emulator: {
-        pattern: /[:;]-?[\(\)DE]/g
+        pattern: '[:;]-?[\(\)DE]'
     },
     webchat: {
-        pattern: /[:;]-?[\(\)DE]/g
+        pattern: '[:;]-?[\(\)DE]'
     },
     skype: {
-        pattern: /<ss type="(\w+?)">(.+?)<\/ss>/g,
-        smile: 2
+        pattern: '<ss type=".+?">(.+?)<\/ss>',
+        smileAt: 1
     }
 }
 
@@ -21,15 +21,12 @@ module.exports = {
             return undefined;
         }
 
-        const smiles = text.match(detector.pattern);
+        const smiles = text.match(new RegExp(detector.pattern));
         if (!smiles) {
             return undefined;
         }
 
-        return {
-            pattern: detector.pattern,
-            face: smiles[detector.smile || 0]
-        };
+        return smiles[detector.smileAt || 0];
     },
 
     recognize: function (context, callback) {
@@ -37,16 +34,17 @@ module.exports = {
         const channel = context.message.address.channelId;
 
         const smile = this.detect(text, channel);
+
         if (!smile) {
             callback();
         } else {
-            console.log('Sending back a smily face %s', smile.face);
+            console.log('Sending back a smily face [%s]', smile);
 
             callback(null, {
                 intent: 'Smile',
                 score: 1,
                 entities: [{
-                    entity: smile.face,
+                    entity: smile,
                     score: 1,
                     type: 'Smile'
                 }]
@@ -61,9 +59,10 @@ module.exports = {
         const smile = this.detect(text, channel);
 
         if (smile) {
-            session.send(smile.face);
+            session.send(smile);
 
-            session.message.text = session.message.text.replace(smile.pattern, '');
+            const smiles = new RegExp(detectors[channel].pattern, 'g');
+            session.message.text = session.message.text.replace(smiles, '');
 
             if (session.message.text.trim()) {
                 session.sendTyping();
