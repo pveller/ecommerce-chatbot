@@ -59,8 +59,12 @@ dialog.showCart(bot);
 
 bot.dialog('/confused', [
     function (session, args, next) {
-        session.endDialog('Sorry, I didn\'t understand you or maybe just lost track of our conversation');
         // ToDo: need to offer an option to say "help"
+        if (session.message.text.trim()) {
+            session.endDialog('Sorry, I didn\'t understand you or maybe just lost track of our conversation');
+        } else {
+            session.endDialog();
+        }        
     }
 ]);
 
