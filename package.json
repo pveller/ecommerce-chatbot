@@ -7,6 +7,7 @@
   "description": "e-commerce chatbot with product recommendations",
   "main": "app.js",
   "dependencies": {
+    "moltin": "^1.0.4",
     "botbuilder": "^3.7.0",
     "lodash": "^4.17.4",
     "request-promise-native": "^1.0.3",
