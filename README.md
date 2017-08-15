@@ -18,7 +18,7 @@ I presented this bot on [API Strat](http://boston2016.apistrat.com/) in Boston a
 If you would like to run it, you would need:
 * A [Moltin](https://moltin.com) subscription with the [Adventure Works](https://msftdbprodsamples.codeplex.com/releases/view/125550) data (I previously [shared scripts](https://github.com/pveller/adventureworks-moltin) to import Adventure Works data into Moltin)
 * [Azure Search](https://azure.microsoft.com/en-us/services/search) service with three indexes - `categories`, `products`, and `variants`. You can find the index definitions and the script that can set up everything you need [here](/indexes)
-* [Recommendations API](https://www.microsoft.com/cognitive-services/en-us/recommendations-api) endpoint with the FBT (frequently bought together) model trained on historical orders. I will soon share the script that loads the data and trains the model
+* [Recommendations API](https://www.microsoft.com/cognitive-services/en-us/recommendations-api) endpoint with the FBT (frequently bought together) model trained on historical orders. Here's the [instruction on how to set it all up](/recommendations).
 * Trained [LUIS](https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis) model for the intents that require NLU to be recognized. You can import [the app that I trained](/luis) to get a head start
 
 Deploy your bot (I used [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/)) and register it with the [dev.botframework.com](https://dev.botframework.com/).
