@@ -2,7 +2,7 @@
 
 First, head over to the [Adventure Works Moltin](https://github.com/pveller/adventureworks-moltin) and run [the script](https://github.com/pveller/adventureworks-moltin/blob/master/recommendations.js) that will generate the data you need to feed the recommendation engine. I didn't re-create historical transactions as orders in Moltin so the script will use the original source data to build the recommendation model.
 
-You should now have two files somewhere in `path`:
+You should now have two files alongside your Adventure Works catalog:
 
 * `recommendations-catalog.csv` - product catalog with attributes
 * `recommendations-usage.csv` - the list of historical purchases
@@ -23,9 +23,9 @@ or with the environment variable:
 $ RECOMMENDATION_API_KEY=yourkey node recommendations/populate.js "/Users/you/path-to-CSVs" "Model_Name" "Model Description"
 ```
 
-If you don't provide the name and/or the description, the script will use the defaults: `eComm-Chatbot` and `FBT recommendations model for the Adventure Works product catalog`.
+If you don't provide the name and/or the description, the script will use the defaults: `eComm-Chatbot` and `FBT build for Adventure Works`.
 
-The script will output the recommendation **build** and recommendation **model** that was trained. Example output:
+The script will output the recommendation **model** and recommendation **build** that was trained. Example output:
 
 ```
 There is already a recommendation model named eComm-Chatbot. The existing model needs to be deleted first
