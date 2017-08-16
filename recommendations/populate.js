@@ -2,6 +2,7 @@ const request = require('request-promise-native');
 const fs = require('fs');
 const path = require('path');
 const sdk = require('./sdk')(process.env.RECOMMENDATION_API_KEY);
+const repeater = require('./repeater');
 
 const catalog = process.argv[2];
 if (!catalog || !fs.existsSync(catalog)) {
@@ -41,22 +42,12 @@ sdk.model.list()
 
         console.log(`FBT build ${build.buildId} created succesfully. Will now wait for the training to finish.`);
 
-        const check = (timeout) => new Promise((resolve, reject) => {
-            setTimeout(() => sdk.build.get(model.id, build.buildId)
-                .then(response => {
-                    if (!['Not Started', 'Running'].includes(response.status)) {
-                        console.log(`Build training finished: ${response.status}`);
-                        resolve();
-                    } else {
-                        console.log(`Training is ${response.status}. Will check again in 30 seconds...`);
-                        resolve(check(30000));
-                    }
-
-                })
-                .catch(reject), timeout);
+        return repeater.repeat(() => sdk.build.get(model.id, build.buildId), {
+            delay: 30000,
+            until: (response) => !['Not Started', 'Running'].includes(response.status),
+            done: (response) => console.log(`Build training finished: ${response.status}`),
+            next: (response, delay) => console.log(`Training is ${response.status}. Will check again in ${delay / 1000} seconds...`)
         });
-
-        return check();
     }).then(() => {
         console.log('All said and done');
         console.log(`Set RECOMMENDATION_MODEL to ${model.id}`);
