@@ -44,7 +44,7 @@ sdk.model.list()
 
         return repeater.repeat(() => sdk.build.get(model.id, build.buildId), {
             delay: 30000,
-            until: (response) => !['Not Started', 'Running'].includes(response.status),
+            until: (response) => !['NotStarted', 'Running'].includes(response.status),
             done: (response) => console.log(`Build training finished: ${response.status}`),
             next: (response, delay) => console.log(`Training is ${response.status}. Will check again in ${delay / 1000} seconds...`)
         });
