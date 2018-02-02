@@ -1,6 +1,6 @@
 const builder = require('botbuilder');
 const search = require('../search/search');
-const recommendations = require('../recommendations');
+//const recommendations = require('../recommendations');
 const sentiment = require('../sentiment');
 
 const lookupProductOrVariant = function(session, id, next) {
@@ -62,6 +62,12 @@ const describe = function(product, variant) {
   );
 };
 
+/*
+  Not used at the moment. 
+  Microsoft decided to discontinue the Recommendations API preview and the alternative is not exactly the same. 
+  I may come back later and integrate another service
+*/
+/*
 const showRecommendations = function(session) {
   session.sendTyping();
 
@@ -111,6 +117,7 @@ const showRecommendations = function(session) {
     );
   });
 };
+*/
 
 module.exports = function(bot) {
   bot.dialog('/addToCart', [
@@ -143,6 +150,16 @@ module.exports = function(bot) {
 
       next({ variant });
     },
+    function(sessoion, args, next) {
+      // not doing recommendations at the moment
+      session.reset('/showCart');
+    }
+    /*
+      Not used at the moment. 
+      Microsoft decided to discontinue the Recommendations API preview and the alternative is not exactly the same. 
+      I may come back later and integrate another service
+    */
+    /*
     function(session, args, next) {
       session.sendTyping();
 
@@ -169,5 +186,6 @@ module.exports = function(bot) {
         showRecommendations(session);
       }
     }
+    */
   ]);
 };
