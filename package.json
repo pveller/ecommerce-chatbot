@@ -13,9 +13,9 @@
   "dependencies": {
     "@moltin/sdk": "^3.3.0",
     "botbuilder": "^3.14.0",
+    "express": "^4.16.2",
     "lodash": "^4.17.4",
-    "request-promise-native": "^1.0.5",
-    "restify": "^6.3.4"
+    "request-promise-native": "^1.0.5"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

@@ -1,6 +1,11 @@
-# UPDATE
+# UPDATE 2/2/2018
 
-Updated to use Moltin v2 API to generate search indexes. Please make sure you re-create your Moltin store using the most recent version of [the import scripts](https://github.com/pveller/adventureworks-moltin) as there are breaking changes in the data layout. Also, Microsoft is discontinuing the Recommendations API preview in February 2018. The alternative is to deploy the [Recommendations Solution](https://gallery.cortanaintelligence.com/Tutorial/Recommendations-Solution) template, but it does not yet support the frequently bought together algorithm that the bot was using. The deployment of a solution template is aslo a more involved process so I decided to drop recommendations for now. The recommendation code is still there and is just not used by the dialog flow at the moment.
+* Updated to use Moltin v2 API to generate search indexes. Please make sure you re-create your Moltin store using the most recent version of [the import scripts](https://github.com/pveller/adventureworks-moltin) as there are breaking changes in the data layout.
+* LUIS model was re-exported and is now in the 2.1.0 schema version.
+* Moved from restify to express
+* Also, Microsoft is discontinuing the Recommendations API preview in February 2018. The alternative is to deploy the [Recommendations Solution](https://gallery.cortanaintelligence.com/Tutorial/Recommendations-Solution) template, but it does not yet support the frequently bought together algorithm that the bot was using. The deployment of a solution template is aslo a more involved process so I decided to drop recommendations for now. The recommendation code is still there and is just not used by the dialog flow at the moment.
+
+Note: the bot is still using the original State API that was deprecated. It works, but the recommendation from Microsoft is to implement a [custom state data](https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-state-azure-cosmosdb).
 
 # E-Commerce Chatbot
 

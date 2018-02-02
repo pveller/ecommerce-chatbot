@@ -1,6 +1,5 @@
-const restify = require('restify');
 const builder = require('botbuilder');
-
+const express = require('express');
 const greeting = require('./app/recognizer/greeting');
 const commands = require('./app/recognizer/commands');
 const smiles = require('./app/recognizer/smiles');
@@ -93,15 +92,11 @@ bot.dialog('/checkout', [
   }
 ]);
 
-const server = restify.createServer();
-server.listen(process.env.port || process.env.PORT || 3978, function() {
-  console.log('%s listening to %s', server.name, server.url);
+const app = express();
+
+app.get(`/`, (_, res) => res.sendFile(path.join(__dirname + '/index.html')));
+app.post('/api/messages', connector.listen());
+
+app.listen(process.env.PORT || process.env.port || 3978, () => {
+  console.log('Express HTTP is ready and is accepting connections');
 });
-server.get(
-  /.*/,
-  restify.serveStatic({
-    directory: '.',
-    default: 'index.html'
-  })
-);
-server.post('/api/messages', connector.listen());

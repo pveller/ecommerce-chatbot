@@ -1,5 +1,6 @@
 {
-  "luis_schema_version": "1.3.0",
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
   "name": "commercehcat",
   "desc": "",
   "culture": "en-us",
@@ -31,44 +32,53 @@
   "composites": [],
   "closedLists": [],
   "bing_entities": [],
-  "actions": [
-    {
-      "actionName": "Explore",
-      "intentName": "Explore",
-      "channel": null,
-      "actionParameters": [
-        {
-          "parameterName": "Entity",
-          "entityName": "Entity",
-          "required": true,
-          "question": "",
-          "phraseListFeatureName": null
-        },
-        {
-          "parameterName": "Detail",
-          "entityName": "Detail",
-          "required": false,
-          "question": "",
-          "phraseListFeatureName": null
-        }
-      ]
-    }
-  ],
   "model_features": [],
   "regex_features": [],
   "utterances": [
+    {
+      "text": "checkout",
+      "intent": "Checkout",
+      "entities": []
+    },
+    {
+      "text": "what kind of bikes do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "what do you have?",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
     {
       "text": "what have you got?",
       "intent": "ShowTopCategories",
       "entities": []
     },
     {
-      "text": "show me around please",
-      "intent": "ShowTopCategories",
-      "entities": []
+      "text": "show me mountain bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 8,
+          "endPos": 15
+        },
+        {
+          "entity": "Entity",
+          "startPos": 17,
+          "endPos": 21
+        }
+      ]
     },
     {
-      "text": "what's in store?",
+      "text": "show me what you got",
       "intent": "ShowTopCategories",
       "entities": []
     },
@@ -78,1767 +88,23 @@
       "entities": []
     },
     {
-      "text": "alright. tell me what you have?",
-      "intent": "ShowTopCategories",
+      "text": "checkout please",
+      "intent": "Checkout",
       "entities": []
     },
     {
-      "text": "what do you have?",
-      "intent": "ShowTopCategories",
+      "text": "what's in my cart",
+      "intent": "ShowCart",
       "entities": []
     },
     {
-      "text": "alright. so what do you have?",
-      "intent": "ShowTopCategories",
-      "entities": []
-    },
-    {
-      "text": "what kind of bikes do you have?",
+      "text": "show me some gloves",
       "intent": "Explore",
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "do you have mountain bikes?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "what kind of accessories?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "what helmets?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 1,
-          "endPos": 1
-        }
-      ]
-    },
-    {
-      "text": "can you show me helmets?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "i need some handlebars",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "what kind of bike racks do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "what kind of touring bikes?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "can you show me the bikes?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "please show me bottom brackets",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "i need some bib-shorts",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "what kind of handlebars do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "please show me pedals",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "show me some derailleurs",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "i would like to see road frames",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Entity",
-          "startPos": 6,
-          "endPos": 6
-        }
-      ]
-    },
-    {
-      "text": "i need some cleaners",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "interested in saddles",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
-        }
-      ]
-    },
-    {
-      "text": "interested in tights",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
-        }
-      ]
-    },
-    {
-      "text": "i would like to see saddles",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "i need some bike racks",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "i need some bottom brackets",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "i need some mountain bikes",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "i need some touring bikes",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "i would like to see bike racks",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Entity",
-          "startPos": 6,
-          "endPos": 6
-        }
-      ]
-    },
-    {
-      "text": "i would like to see mountain frames",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Entity",
-          "startPos": 6,
-          "endPos": 6
-        }
-      ]
-    },
-    {
-      "text": "i would like to see bib-shorts",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Entity",
-          "startPos": 7,
-          "endPos": 7
-        }
-      ]
-    },
-    {
-      "text": "i would like to see bottom brackets",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Entity",
-          "startPos": 6,
-          "endPos": 6
-        }
-      ]
-    },
-    {
-      "text": "i would like to see touring frames",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Entity",
-          "startPos": 6,
-          "endPos": 6
-        }
-      ]
-    },
-    {
-      "text": "i would like to see road bikes",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Entity",
-          "startPos": 6,
-          "endPos": 6
-        }
-      ]
-    },
-    {
-      "text": "what kind of bottom brackets do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "what kind of touring frames do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "i would like to see mountain bikes",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Entity",
-          "startPos": 6,
-          "endPos": 6
-        }
-      ]
-    },
-    {
-      "text": "i would like to see touring bikes",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Entity",
-          "startPos": 6,
-          "endPos": 6
-        }
-      ]
-    },
-    {
-      "text": "i would like to see tires and tubes",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Entity",
-          "startPos": 7,
-          "endPos": 7
-        }
-      ]
-    },
-    {
-      "text": "please show me bottles and cages",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "i would like to see hydration packs",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Entity",
-          "startPos": 6,
-          "endPos": 6
-        }
-      ]
-    },
-    {
-      "text": "what kind of bike stands do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "interested in tires and tubes",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "i would like to see bottles and cages",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Entity",
-          "startPos": 7,
-          "endPos": 7
-        }
-      ]
-    },
-    {
-      "text": "i would like to see caps",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "please show me hydration packs",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "i would like to see jerseys",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "interested in fenders",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
-        }
-      ]
-    },
-    {
-      "text": "what kind of fenders do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "what kind of vests do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "please show me socks",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "please show me brakes",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "please show me locks",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "i need some gloves",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "i would like to see headsets",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "please show me chains",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "i would like to see pumps",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "i need some forks",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "i would like to see wheels",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "i need some lights",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "interested in bike stands",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "what kind of bib-shorts do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "what kind of hydration packs do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "what kind of road frames do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "interested in bib-shorts",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "please show me bike stands",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "interested in vests",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
-        }
-      ]
-    },
-    {
-      "text": "i would like to see tights",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "what kind of forks do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "what kind of wheels do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "what kind of lights do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "please show me forks",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "i would like to see bike stands",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Entity",
-          "startPos": 6,
-          "endPos": 6
-        }
-      ]
-    },
-    {
-      "text": "i need some socks",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "i would like to see vests",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "i would like to see cleaners",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "interested in hydration packs",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "i need some brakes",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "what kind of socks do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "what kind of brakes do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "what kind of locks do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "what kind of chains do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "i would like to see lights",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "what kind of pedals do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "i need some tights",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "i would like to see gloves",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "i would like to see forks",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "show me some hydration packs",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "interested in caps",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
-        }
-      ]
-    },
-    {
-      "text": "i need some locks",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "i would like to see brakes",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "i need some chains",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "interested in pumps",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
-        }
-      ]
-    },
-    {
-      "text": "what kind of mountain frames do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "i would like to see pedals",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "interested in jerseys",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
-        }
-      ]
-    },
-    {
-      "text": "what kind of road bikes do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "please show me bib-shorts",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "i need some pumps",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "i need some jerseys",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "interested in headsets",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
-        }
-      ]
-    },
-    {
-      "text": "please show me road frames",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "please show me bike racks",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "show me some bottom brackets",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "i need some hydration packs",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "i would like to see locks",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "i would like to see chains",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "interested in wheels",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
-        }
-      ]
-    },
-    {
-      "text": "i need some tires and tubes",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "i need some bottles and cages",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "what kind of headsets do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "show me some bib-shorts",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "what kind of helmets do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "i would like to see fenders",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "i need some wheels",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "i would like to see handlebars",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "i need some caps",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "show me some bike stands",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "what kind of mountain bikes do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "i need some headsets",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "interested in bottom brackets",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "i need some saddles",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "what kind of touring bikes do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "please show me mountain frames",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "show me some bike racks",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "what kind of shorts do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "please show me road bikes",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "i would like to see socks",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "what kind of cleaners do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "what kind of gloves do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "what kind of saddles do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "i need some bike stands",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "interested in lights",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
-        }
-      ]
-    },
-    {
-      "text": "show me some road frames",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "i would like to see helmets",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
-        }
-      ]
-    },
-    {
-      "text": "interested in cleaners",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
-        }
-      ]
-    },
-    {
-      "text": "please show me touring frames",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "interested in gloves",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
-        }
-      ]
-    },
-    {
-      "text": "what kind of caps do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "please show me cleaners",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 18
         }
       ]
     },
@@ -1848,8 +114,1843 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "do you have shirts?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "what's in store?",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "show me the bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "i would like to see gloves",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "what bikes do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "what kind of touring bikes?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 13,
+          "endPos": 19
+        },
+        {
+          "entity": "Entity",
+          "startPos": 21,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "do you have touring bikes?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 12,
+          "endPos": 18
+        },
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "show me bikes please",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 8,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "show me touring bikes please",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 8,
+          "endPos": 14
+        },
+        {
+          "entity": "Entity",
+          "startPos": 16,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "show me around please",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "alright. tell me what you have?",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "alright. so what do you have?",
+      "intent": "ShowTopCategories",
+      "entities": []
+    },
+    {
+      "text": "do you have mountain bikes?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 12,
+          "endPos": 19
+        },
+        {
+          "entity": "Entity",
+          "startPos": 21,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "what kind of accessories?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "what helmets?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 5,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "can you show me helmets?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 16,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "i need some handlebars",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "what kind of bike racks do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 13,
+          "endPos": 16
+        },
+        {
+          "entity": "Entity",
+          "startPos": 18,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "can you show me the bikes?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "please show me bottom brackets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 15,
+          "endPos": 20
+        },
+        {
+          "entity": "Entity",
+          "startPos": 22,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "i need some bib-shorts",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 12,
+          "endPos": 14
+        },
+        {
+          "entity": "Entity",
+          "startPos": 16,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "what kind of handlebars do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "please show me pedals",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 15,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "show me some derailleurs",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "i would like to see road frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 20,
+          "endPos": 23
+        },
+        {
+          "entity": "Entity",
+          "startPos": 25,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "i need some cleaners",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "interested in saddles",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 14,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "interested in tights",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 14,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "i would like to see saddles",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "i need some bike racks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 12,
+          "endPos": 15
+        },
+        {
+          "entity": "Entity",
+          "startPos": 17,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "i need some bottom brackets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 12,
+          "endPos": 17
+        },
+        {
+          "entity": "Entity",
+          "startPos": 19,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "i need some mountain bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 12,
+          "endPos": 19
+        },
+        {
+          "entity": "Entity",
+          "startPos": 21,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "i need some touring bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 12,
+          "endPos": 18
+        },
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "i would like to see bike racks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 20,
+          "endPos": 23
+        },
+        {
+          "entity": "Entity",
+          "startPos": 25,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "i would like to see mountain frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 20,
+          "endPos": 27
+        },
+        {
+          "entity": "Entity",
+          "startPos": 29,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "i would like to see bib-shorts",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 20,
+          "endPos": 22
+        },
+        {
+          "entity": "Entity",
+          "startPos": 24,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "i would like to see bottom brackets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 20,
+          "endPos": 25
+        },
+        {
+          "entity": "Entity",
+          "startPos": 27,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "i would like to see touring frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 20,
+          "endPos": 26
+        },
+        {
+          "entity": "Entity",
+          "startPos": 28,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "i would like to see road bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 20,
+          "endPos": 23
+        },
+        {
+          "entity": "Entity",
+          "startPos": 25,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "what kind of bottom brackets do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 13,
+          "endPos": 18
+        },
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "what kind of touring frames do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 13,
+          "endPos": 19
+        },
+        {
+          "entity": "Entity",
+          "startPos": 21,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "i would like to see mountain bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 20,
+          "endPos": 27
+        },
+        {
+          "entity": "Entity",
+          "startPos": 29,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "i would like to see touring bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 20,
+          "endPos": 26
+        },
+        {
+          "entity": "Entity",
+          "startPos": 28,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "i would like to see tires and tubes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 24
+        },
+        {
+          "entity": "Entity",
+          "startPos": 30,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "please show me bottles and cages",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 15,
+          "endPos": 21
+        },
+        {
+          "entity": "Entity",
+          "startPos": 27,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "i would like to see hydration packs",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 20,
+          "endPos": 28
+        },
+        {
+          "entity": "Entity",
+          "startPos": 30,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "what kind of bike stands do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 13,
+          "endPos": 16
+        },
+        {
+          "entity": "Entity",
+          "startPos": 18,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "interested in tires and tubes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 14,
+          "endPos": 18
+        },
+        {
+          "entity": "Entity",
+          "startPos": 24,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "i would like to see bottles and cages",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 26
+        },
+        {
+          "entity": "Entity",
+          "startPos": 32,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "i would like to see caps",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "please show me hydration packs",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 15,
+          "endPos": 23
+        },
+        {
+          "entity": "Entity",
+          "startPos": 25,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "i would like to see jerseys",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "interested in fenders",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 14,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "what kind of fenders do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "what kind of vests do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "please show me socks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 15,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "please show me brakes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 15,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "please show me locks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 15,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "i need some gloves",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "i would like to see headsets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "please show me chains",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 15,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "i would like to see pumps",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "i need some forks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "i would like to see wheels",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "i need some lights",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "interested in bike stands",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 14,
+          "endPos": 17
+        },
+        {
+          "entity": "Entity",
+          "startPos": 19,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "what kind of bib-shorts do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "Entity",
+          "startPos": 17,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "what kind of hydration packs do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 13,
+          "endPos": 21
+        },
+        {
+          "entity": "Entity",
+          "startPos": 23,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "what kind of road frames do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 13,
+          "endPos": 16
+        },
+        {
+          "entity": "Entity",
+          "startPos": 18,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "interested in bib-shorts",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 14,
+          "endPos": 16
+        },
+        {
+          "entity": "Entity",
+          "startPos": 18,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "please show me bike stands",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 15,
+          "endPos": 18
+        },
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "interested in vests",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 14,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "i would like to see tights",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "what kind of forks do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "what kind of wheels do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "what kind of lights do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "please show me forks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 15,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "i would like to see bike stands",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 20,
+          "endPos": 23
+        },
+        {
+          "entity": "Entity",
+          "startPos": 25,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "i need some socks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "i would like to see vests",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "i would like to see cleaners",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "interested in hydration packs",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 14,
+          "endPos": 22
+        },
+        {
+          "entity": "Entity",
+          "startPos": 24,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "i need some brakes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "what kind of socks do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "what kind of brakes do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "what kind of locks do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "what kind of chains do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "i would like to see lights",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "what kind of pedals do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "i need some tights",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "i would like to see forks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "show me some hydration packs",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 13,
+          "endPos": 21
+        },
+        {
+          "entity": "Entity",
+          "startPos": 23,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "interested in caps",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 14,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "i need some locks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "i would like to see brakes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "i need some chains",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "interested in pumps",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 14,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "what kind of mountain frames do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 13,
+          "endPos": 20
+        },
+        {
+          "entity": "Entity",
+          "startPos": 22,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "i would like to see pedals",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "interested in jerseys",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 14,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "what kind of road bikes do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 13,
+          "endPos": 16
+        },
+        {
+          "entity": "Entity",
+          "startPos": 18,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "please show me bib-shorts",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 15,
+          "endPos": 17
+        },
+        {
+          "entity": "Entity",
+          "startPos": 19,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "i need some pumps",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "i need some jerseys",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "interested in headsets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 14,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "please show me road frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 15,
+          "endPos": 18
+        },
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "please show me bike racks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 15,
+          "endPos": 18
+        },
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "show me some bottom brackets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 13,
+          "endPos": 18
+        },
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "i need some hydration packs",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 12,
+          "endPos": 20
+        },
+        {
+          "entity": "Entity",
+          "startPos": 22,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "i would like to see locks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "i would like to see chains",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "interested in wheels",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 14,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "i need some tires and tubes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 16
+        },
+        {
+          "entity": "Entity",
+          "startPos": 22,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "i need some bottles and cages",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 18
+        },
+        {
+          "entity": "Entity",
+          "startPos": 24,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "what kind of headsets do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "show me some bib-shorts",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "Entity",
+          "startPos": 17,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "what kind of helmets do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "i would like to see fenders",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "i need some wheels",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "i would like to see handlebars",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "i need some caps",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "show me some bike stands",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 18,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "what kind of mountain bikes do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 13,
+          "endPos": 20
+        },
+        {
+          "entity": "Entity",
+          "startPos": 22,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "i need some headsets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "interested in bottom brackets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 21,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "i need some saddles",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 12,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "what kind of touring bikes do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 13,
+          "endPos": 19
+        },
+        {
+          "entity": "Entity",
+          "startPos": 21,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "please show me mountain frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 15,
+          "endPos": 22
+        },
+        {
+          "entity": "Entity",
+          "startPos": 24,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "show me some bike racks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 13,
+          "endPos": 16
+        },
+        {
+          "entity": "Entity",
+          "startPos": 18,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "what kind of shorts do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "please show me road bikes",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 15,
+          "endPos": 18
+        },
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "i would like to see socks",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "what kind of cleaners do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "what kind of gloves do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "what kind of saddles do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "i need some bike stands",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 12,
+          "endPos": 15
+        },
+        {
+          "entity": "Entity",
+          "startPos": 17,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "interested in lights",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 14,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "show me some road frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 18,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "i would like to see helmets",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 20,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "interested in cleaners",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 14,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "please show me touring frames",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Detail",
+          "startPos": 15,
+          "endPos": 21
+        },
+        {
+          "entity": "Entity",
+          "startPos": 23,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "interested in gloves",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 14,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "what kind of caps do you have?",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 13,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "please show me cleaners",
+      "intent": "Explore",
+      "entities": [
+        {
+          "entity": "Entity",
+          "startPos": 15,
+          "endPos": 22
         }
       ]
     },
@@ -1859,8 +1960,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 19,
+          "endPos": 23
         }
       ]
     },
@@ -1870,8 +1971,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 21
         }
       ]
     },
@@ -1881,13 +1982,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 22
         },
         {
           "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 24,
+          "endPos": 28
         }
       ]
     },
@@ -1897,8 +1998,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 19,
+          "endPos": 24
         }
       ]
     },
@@ -1908,8 +2009,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 20,
+          "endPos": 25
         }
       ]
     },
@@ -1919,13 +2020,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 21
         },
         {
           "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 23,
+          "endPos": 27
         }
       ]
     },
@@ -1935,8 +2036,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 23,
+          "endPos": 28
         }
       ]
     },
@@ -1946,8 +2047,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 20
         }
       ]
     },
@@ -1957,13 +2058,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 20
         },
         {
           "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 22,
+          "endPos": 27
         }
       ]
     },
@@ -1973,13 +2074,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 16
         },
         {
           "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 18,
+          "endPos": 22
         }
       ]
     },
@@ -1989,8 +2090,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 23
         }
       ]
     },
@@ -2000,8 +2101,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 20
         }
       ]
     },
@@ -2011,13 +2112,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 15
         },
         {
           "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 17,
+          "endPos": 22
         }
       ]
     },
@@ -2027,8 +2128,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 21
         }
       ]
     },
@@ -2038,13 +2139,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 20
         },
         {
           "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 22,
+          "endPos": 26
         }
       ]
     },
@@ -2054,13 +2155,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 19
         },
         {
           "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 21,
+          "endPos": 26
         }
       ]
     },
@@ -2070,8 +2171,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 19,
+          "endPos": 23
         }
       ]
     },
@@ -2081,13 +2182,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 19
         },
         {
           "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 21,
+          "endPos": 26
         }
       ]
     },
@@ -2097,8 +2198,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 20,
+          "endPos": 30
         }
       ]
     },
@@ -2108,8 +2209,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 22,
+          "endPos": 27
         }
       ]
     },
@@ -2119,13 +2220,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 15
         },
         {
           "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 17,
+          "endPos": 21
         }
       ]
     },
@@ -2135,8 +2236,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 20,
+          "endPos": 28
         }
       ]
     },
@@ -2146,8 +2247,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 17
         }
       ]
     },
@@ -2157,13 +2258,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 14,
+          "endPos": 21
         },
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 23,
+          "endPos": 27
         }
       ]
     },
@@ -2173,8 +2274,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 20,
+          "endPos": 27
         }
       ]
     },
@@ -2184,13 +2285,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 19
         },
         {
           "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 21,
+          "endPos": 25
         }
       ]
     },
@@ -2200,13 +2301,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 18
         },
         {
           "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 20,
+          "endPos": 25
         }
       ]
     },
@@ -2216,13 +2317,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 14,
+          "endPos": 20
         },
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 22,
+          "endPos": 26
         }
       ]
     },
@@ -2232,8 +2333,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 20
         }
       ]
     },
@@ -2243,8 +2344,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 21
         }
       ]
     },
@@ -2254,8 +2355,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 14,
+          "endPos": 18
         }
       ]
     },
@@ -2265,8 +2366,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 14,
+          "endPos": 19
         }
       ]
     },
@@ -2276,8 +2377,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 14,
+          "endPos": 19
         }
       ]
     },
@@ -2287,8 +2388,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 19
         }
       ]
     },
@@ -2298,13 +2399,13 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 19
         },
         {
           "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 25,
+          "endPos": 29
         }
       ]
     },
@@ -2314,8 +2415,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 23
         }
       ]
     },
@@ -2325,8 +2426,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 16
         }
       ]
     },
@@ -2336,8 +2437,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 18
         }
       ]
     },
@@ -2347,8 +2448,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 17
         }
       ]
     },
@@ -2358,8 +2459,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 19
         }
       ]
     },
@@ -2369,8 +2470,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 22
         }
       ]
     },
@@ -2380,8 +2481,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 22
         }
       ]
     },
@@ -2391,8 +2492,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 14,
+          "endPos": 19
         }
       ]
     },
@@ -2402,8 +2503,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 21
         }
       ]
     },
@@ -2413,8 +2514,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 20
         }
       ]
     },
@@ -2424,8 +2525,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 18
         }
       ]
     },
@@ -2435,8 +2536,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 18
         }
       ]
     },
@@ -2446,8 +2547,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 17
         }
       ]
     },
@@ -2457,8 +2558,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 20
         }
       ]
     },
@@ -2468,8 +2569,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 19
         }
       ]
     },
@@ -2479,8 +2580,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 18
         }
       ]
     },
@@ -2490,8 +2591,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 17
         }
       ]
     },
@@ -2501,8 +2602,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 19
         }
       ]
     },
@@ -2512,19 +2613,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "show me some gloves",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 17
         }
       ]
     },
@@ -2534,8 +2624,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 19
         }
       ]
     },
@@ -2545,8 +2635,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 18
         }
       ]
     },
@@ -2556,13 +2646,13 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 19
         },
         {
           "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 25,
+          "endPos": 29
         }
       ]
     },
@@ -2572,8 +2662,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 20
         }
       ]
     },
@@ -2583,8 +2673,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 14,
+          "endPos": 18
         }
       ]
     },
@@ -2594,8 +2684,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 14,
+          "endPos": 24
         }
       ]
     },
@@ -2605,8 +2695,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 14,
+          "endPos": 21
         }
       ]
     },
@@ -2616,8 +2706,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 21
         }
       ]
     },
@@ -2627,13 +2717,13 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 17
         },
         {
           "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 23,
+          "endPos": 27
         }
       ]
     },
@@ -2643,8 +2733,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 18
         }
       ]
     },
@@ -2654,8 +2744,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 18
         }
       ]
     },
@@ -2665,8 +2755,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 22
         }
       ]
     },
@@ -2676,8 +2766,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 18
         }
       ]
     },
@@ -2687,8 +2777,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 21
         }
       ]
     },
@@ -2698,8 +2788,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 19
         }
       ]
     },
@@ -2709,8 +2799,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 17
         }
       ]
     },
@@ -2720,8 +2810,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 20
         }
       ]
     },
@@ -2731,8 +2821,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 14,
+          "endPos": 20
         }
       ]
     },
@@ -2742,8 +2832,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 24
         }
       ]
     },
@@ -2753,8 +2843,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 17
         }
       ]
     },
@@ -2764,8 +2854,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 14,
+          "endPos": 19
         }
       ]
     },
@@ -2775,8 +2865,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 17
         }
       ]
     },
@@ -2786,13 +2876,13 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 19
         },
         {
           "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 25,
+          "endPos": 29
         }
       ]
     },
@@ -2802,8 +2892,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 20
         }
       ]
     },
@@ -2813,13 +2903,13 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 17
         },
         {
           "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 23,
+          "endPos": 27
         }
       ]
     },
@@ -2829,8 +2919,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 22
         }
       ]
     },
@@ -2840,8 +2930,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 18
         }
       ]
     },
@@ -2851,8 +2941,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 14,
+          "endPos": 23
         }
       ]
     },
@@ -2862,8 +2952,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 25
         }
       ]
     },
@@ -2873,8 +2963,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 19
         }
       ]
     },
@@ -2884,8 +2974,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 18
         }
       ]
     },
@@ -2895,8 +2985,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 18
         }
       ]
     },
@@ -2906,8 +2996,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 19
         }
       ]
     },
@@ -2917,13 +3007,13 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 14,
+          "endPos": 20
         },
         {
           "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 26,
+          "endPos": 30
         }
       ]
     },
@@ -2933,8 +3023,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 20
         }
       ]
     },
@@ -2944,8 +3034,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 14,
+          "endPos": 22
         }
       ]
     },
@@ -2955,8 +3045,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 14,
+          "endPos": 18
         }
       ]
     },
@@ -2966,8 +3056,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 16
         }
       ]
     },
@@ -2977,8 +3067,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 11,
+          "endPos": 15
         }
       ]
     },
@@ -2988,8 +3078,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 15,
+          "endPos": 20
         }
       ]
     },
@@ -2999,8 +3089,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 17,
+          "endPos": 22
         }
       ]
     },
@@ -3010,8 +3100,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 16
         }
       ]
     },
@@ -3021,13 +3111,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 1,
-          "endPos": 1
+          "startPos": 5,
+          "endPos": 11
         },
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 13,
+          "endPos": 17
         }
       ]
     },
@@ -3037,13 +3127,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 1,
-          "endPos": 1
+          "startPos": 5,
+          "endPos": 11
         },
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 13,
+          "endPos": 17
         }
       ]
     },
@@ -3053,8 +3143,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 22,
+          "endPos": 26
         }
       ]
     },
@@ -3064,8 +3154,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 16
         }
       ]
     },
@@ -3075,13 +3165,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 16,
+          "endPos": 19
         },
         {
           "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 21,
+          "endPos": 25
         }
       ]
     },
@@ -3091,13 +3181,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 18
         },
         {
           "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 20,
+          "endPos": 24
         }
       ]
     },
@@ -3113,12 +3203,12 @@
         {
           "entity": "Detail",
           "startPos": 0,
-          "endPos": 0
+          "endPos": 3
         },
         {
           "entity": "Entity",
-          "startPos": 1,
-          "endPos": 1
+          "startPos": 5,
+          "endPos": 10
         }
       ]
     },
@@ -3138,8 +3228,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 16
         }
       ]
     },
@@ -3154,8 +3244,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 16
         }
       ]
     },
@@ -3165,13 +3255,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 16,
+          "endPos": 22
         },
         {
           "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 24,
+          "endPos": 28
         }
       ]
     },
@@ -3181,13 +3271,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 16,
+          "endPos": 22
         },
         {
           "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 24,
+          "endPos": 28
         }
       ]
     },
@@ -3198,28 +3288,12 @@
         {
           "entity": "Detail",
           "startPos": 0,
-          "endPos": 0
+          "endPos": 6
         },
         {
           "entity": "Entity",
-          "startPos": 1,
-          "endPos": 1
-        }
-      ]
-    },
-    {
-      "text": "show me touring bikes please",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 8,
+          "endPos": 12
         }
       ]
     },
@@ -3229,8 +3303,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 20
         }
       ]
     },
@@ -3240,8 +3314,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 16,
+          "endPos": 21
         }
       ]
     },
@@ -3251,8 +3325,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 22
         }
       ]
     },
@@ -3262,13 +3336,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 16,
+          "endPos": 19
         },
         {
           "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 21,
+          "endPos": 25
         }
       ]
     },
@@ -3279,7 +3353,7 @@
         {
           "entity": "Entity",
           "startPos": 0,
-          "endPos": 0
+          "endPos": 7
         }
       ]
     },
@@ -3289,29 +3363,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 8,
+          "endPos": 14
         },
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "show me mountain bikes",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 16,
+          "endPos": 20
         }
       ]
     },
@@ -3321,8 +3379,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 8,
+          "endPos": 18
         }
       ]
     },
@@ -3332,8 +3390,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 12,
+          "endPos": 22
         }
       ]
     },
@@ -3343,8 +3401,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 8,
+          "endPos": 15
         }
       ]
     },
@@ -3354,13 +3412,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 8,
+          "endPos": 14
         },
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 16,
+          "endPos": 20
         }
       ]
     },
@@ -3370,13 +3428,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 19,
+          "endPos": 26
         },
         {
           "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 28,
+          "endPos": 32
         }
       ]
     },
@@ -3386,13 +3444,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 16
         },
         {
           "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 18,
+          "endPos": 22
         }
       ]
     },
@@ -3402,13 +3460,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 8,
+          "endPos": 14
         },
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 16,
+          "endPos": 20
         }
       ]
     },
@@ -3418,8 +3476,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 20
         }
       ]
     },
@@ -3429,13 +3487,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 19
         },
         {
           "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 21,
+          "endPos": 25
         }
       ]
     },
@@ -3445,13 +3503,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 4,
-          "endPos": 4
+          "startPos": 16,
+          "endPos": 22
         },
         {
           "entity": "Entity",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 24,
+          "endPos": 28
         }
       ]
     },
@@ -3461,13 +3519,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 8,
+          "endPos": 11
         },
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 17
         }
       ]
     },
@@ -3478,7 +3536,7 @@
         {
           "entity": "Entity",
           "startPos": 0,
-          "endPos": 0
+          "endPos": 7
         }
       ]
     },
@@ -3488,19 +3546,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "show me the bikes",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 16,
+          "endPos": 20
         }
       ]
     },
@@ -3511,39 +3558,12 @@
         {
           "entity": "Detail",
           "startPos": 0,
-          "endPos": 0
+          "endPos": 7
         },
         {
           "entity": "Entity",
-          "startPos": 1,
-          "endPos": 1
-        }
-      ]
-    },
-    {
-      "text": "do you have touring bikes?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Detail",
-          "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Entity",
-          "startPos": 4,
-          "endPos": 4
-        }
-      ]
-    },
-    {
-      "text": "what bikes do you have?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 1,
-          "endPos": 1
+          "startPos": 9,
+          "endPos": 13
         }
       ]
     },
@@ -3553,13 +3573,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 8,
+          "endPos": 11
         },
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 17
         }
       ]
     },
@@ -3569,13 +3589,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 8,
+          "endPos": 14
         },
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 16,
+          "endPos": 20
         }
       ]
     },
@@ -3586,12 +3606,12 @@
         {
           "entity": "Detail",
           "startPos": 0,
-          "endPos": 0
+          "endPos": 6
         },
         {
           "entity": "Entity",
-          "startPos": 1,
-          "endPos": 1
+          "startPos": 8,
+          "endPos": 12
         }
       ]
     },
@@ -3601,8 +3621,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 7,
+          "endPos": 11
         }
       ]
     },
@@ -3612,13 +3632,13 @@
       "entities": [
         {
           "entity": "Detail",
-          "startPos": 7,
-          "endPos": 7
+          "startPos": 29,
+          "endPos": 36
         },
         {
           "entity": "Entity",
-          "startPos": 8,
-          "endPos": 8
+          "startPos": 38,
+          "endPos": 41
         }
       ]
     },
@@ -3638,8 +3658,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 11,
+          "endPos": 21
         }
       ]
     },
@@ -3654,26 +3674,10 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 7,
-          "endPos": 7
+          "startPos": 20,
+          "endPos": 26
         }
       ]
-    },
-    {
-      "text": "do you have shirts?",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "show me what you got",
-      "intent": "ShowTopCategories",
-      "entities": []
     },
     {
       "text": "can i see my shopping cart?",
@@ -3696,11 +3700,6 @@
       "entities": []
     },
     {
-      "text": "what's in my cart",
-      "intent": "ShowCart",
-      "entities": []
-    },
-    {
       "text": "what's in my shopping cart",
       "intent": "ShowCart",
       "entities": []
@@ -3711,8 +3710,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 17
         }
       ]
     },
@@ -3727,8 +3726,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 8,
+          "endPos": 17
         }
       ]
     },
@@ -3738,17 +3737,7 @@
       "entities": []
     },
     {
-      "text": "checkout",
-      "intent": "Checkout",
-      "entities": []
-    },
-    {
       "text": "check me out please",
-      "intent": "Checkout",
-      "entities": []
-    },
-    {
-      "text": "checkout please",
       "intent": "Checkout",
       "entities": []
     },
@@ -3783,8 +3772,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 13,
+          "endPos": 22
         }
       ]
     },
@@ -3795,23 +3784,12 @@
         {
           "entity": "Detail",
           "startPos": 0,
-          "endPos": 0
+          "endPos": 3
         },
         {
           "entity": "Entity",
-          "startPos": 1,
-          "endPos": 1
-        }
-      ]
-    },
-    {
-      "text": "show me bikes please",
-      "intent": "Explore",
-      "entities": [
-        {
-          "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 5,
+          "endPos": 9
         }
       ]
     },
@@ -3821,8 +3799,8 @@
       "entities": [
         {
           "entity": "Entity",
-          "startPos": 2,
-          "endPos": 2
+          "startPos": 11,
+          "endPos": 16
         }
       ]
     }

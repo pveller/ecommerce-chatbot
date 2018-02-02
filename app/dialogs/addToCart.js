@@ -150,7 +150,7 @@ module.exports = function(bot) {
 
       next({ variant });
     },
-    function(sessoion, args, next) {
+    function(session, args, next) {
       // not doing recommendations at the moment
       session.reset('/showCart');
     }
