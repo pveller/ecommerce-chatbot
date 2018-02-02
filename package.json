@@ -1,22 +1,35 @@
 {
   "engines": {
-    "node": "6.7.0"
+    "node": "8.9.4"
   },
   "name": "ecommerce-chatbot",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "e-commerce chatbot with product recommendations",
   "main": "app.js",
-  "dependencies": {
-    "moltin": "^1.0.4",
-    "botbuilder": "^3.7.0",
-    "lodash": "^4.17.4",
-    "request-promise-native": "^1.0.3",
-    "restify": "^4.3.0"
-  },
-  "devDependencies": {},
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "precommit": "npm run lint",
+    "lint": "node node_modules/eslint/bin/eslint ./ --fix -f table || true"
+  },
+  "dependencies": {
+    "@moltin/sdk": "^3.3.0",
+    "botbuilder": "^3.14.0",
+    "lodash": "^4.17.4",
+    "request-promise-native": "^1.0.5",
+    "restify": "^6.3.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-prettier": "^2.4.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.10.2"
   },
   "keywords": [
     "ecommerce",

@@ -3,156 +3,192 @@
 const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
-const co = require('co');
 const request = require('request-promise-native');
-const moltin = require('moltin')({
-    publicId: process.env.MOLTIN_PUBLIC_ID,
-    secretKey: process.env.MOLTIN_SECRET_KEY
+
+const MoltinGateway = require('@moltin/sdk').gateway;
+const Moltin = MoltinGateway({
+  client_id: process.env.MOLTIN_CLIENT_ID,
+  client_secret: process.env.MOLTIN_CLIENT_SECRET
 });
-const moltin_p = require('../lib/promisify-moltin')(moltin);
 
-const categories = moltin_p.Category.Tree(null);
-const products = co(function* () {
-    const list = (offset, limit) => {
-        console.log('Fetching products from %s to %s', offset + 1, offset + limit);
-        return moltin_p.Product.List({ offset: offset, limit: limit })
-    };
+if (!Moltin.Files) {
+  // Moltin JS SDK does not support files operation in 3.3.0
+  Moltin.Files = Object.setPrototypeOf(
+    Object.assign({}, Moltin.Products),
+    Moltin.Products
+  );
+  Moltin.Files.endpoint = 'files';
+}
 
-    const all = [];
-    let current = 0, limit = 100, total = 100;
-    while (total > current) {
-        let batch = yield list(current, Math.min(limit, total - current));
+(async function() {
+  // There are only 42 images in the AW catalog and the default pagination limit in Moltin API is 100
+  const images = (await Moltin.Files.All()).data;
+  // A quick a way to pull up an image by id
+  const imagesLookup = _.groupBy(images, image => image.id);
 
-        total = batch.pagination.total;
-        current = batch.pagination.to;
-
-        all.push(...batch);
+  // Tree reads all the categories in one go
+  const taxonomy = (await Moltin.Categories.Tree()).data;
+  for (let topCategory of taxonomy) {
+    for (let child of topCategory.children) {
+      child.parent = topCategory;
     }
+  }
 
-    return all;
-});
+  // In AW, products link to sub-categories, not the top level categories
+  const categories = _.flatMap(taxonomy, category => category.children || []);
+  // A quick way to pull up a category by id
+  const categoryLookup = _.groupBy(categories, category => category.id);
 
-Promise.all([categories, products]).then((data) => {
-    const categories = data[0];
-    const products = data[1];
+  // Need to recursively read all products
+  const catalog = await (async function read(offset = 0, all = []) {
+    Moltin.Products.Offset(offset);
+    const { data, meta } = await Moltin.Products.All();
 
-    console.log(`Collecting data for the categories index`);
+    all.push(...data);
 
-    const categoryIndex = categories
-        .concat(_.flatMap(categories, c => c.children || []))
-        .map(c => ({
-            '@search.action': 'upload',
-            'id': c.id,
-            'title': c.title,
-            'description': c.description,
-            'parent': c.parent ? c.parent.data.id : null
-        }));
+    const total = meta.results.all;
+    const processed =
+      (meta.page.current - 1) * meta.page.limit + meta.results.total;
 
-    console.log(`Collecting data for the products index`);
+    return total > processed ? await read(processed, all) : all;
+  })();
 
-    const productIndex = products.filter(p => !p.is_variation).map(p => {
-        const categoryKey = Object.keys(p.category.data)[0];
-        const category = p.category.data[categoryKey];
+  // Top level products were all created with a generated sku number
+  // actual SKUs that can be purchased are all on the variants
+  const allProducts = catalog.filter(record => /^AW_\d+$/.test(record.sku));
+  const allVariants = catalog.filter(record => !/^AW_\d+$/.test(record.sku));
 
-        const modifierKeys = Object.keys(p.modifiers);
-        const modifiers = modifierKeys.map(key => p.modifiers[key].title);
+  for (let variant of allVariants) {
+    // When we load Adventure Works to Moltin, we give variants
+    // JSON metadata indicating what color and size this variant represents
+    // and also what product is the parent product for this variant
+    variant.description = JSON.parse(variant.description);
+  }
+  // A quick way to pull up a list of product's variants
+  const variantsLookup = _.groupBy(allVariants, v => v.description.parent);
 
-        const [color, size] = ['color', 'size'].map(variance => {
-            return _.chain(modifierKeys)
-                .map(key => p.modifiers[key])
-                .filter(mod => mod.title === variance)
-                .flatMap(mod => Object.keys(mod.variations).map(id => mod.variations[id]))
-                .map(variation => variation.title)
-                .value();
-        });
+  console.log(`Collecting data for the categories index`);
 
-        const image = {
-            domain: p.images[0] ? p.images[0].segments.domain : null,
-            suffix: p.images[0] ? p.images[0].segments.suffix : null
-        };
+  const categoryIndex = taxonomy.concat(categories).map(category => ({
+    '@search.action': 'upload',
+    id: category.id,
+    title: category.name,
+    description: category.description,
+    parent: category.parent ? category.parent.id : null
+  }));
 
-        return {
-            '@search.action': 'upload',
-            'id': p.id,
-            'title': p.title,
-            'description': p.description,
-            'category': category.parent.data.title,
-            'categoryId': category.parent.data.id,
-            'subcategory': category.title,
-            'subcategoryId': category.id,
-            'modifiers': modifiers,
-            'color': color || null,
-            'size': size || null,
-            'price': Number(p.price.value.substring(1).replace(',', '')),
-            'image_domain': image.domain,
-            'image_suffix': image.suffix
-        };
-    });
+  console.log(`Collecting data for the products index`);
 
-    console.log(`Collecting data for the variants index`);
+  const productIndex = allProducts.map(product => {
+    const categoryId = product.relationships.categories.data[0].id;
 
-    const variantIndex = products.filter(p => p.is_variation || Object.keys(p.modifiers).length === 0).map(p => {
-        const modifierKeys = Object.keys(p.modifiers);
-        const [color, size] = ['color', 'size'].map(variance => {
-            let key = modifierKeys.find(key => p.modifiers[key].data.title === variance);
-            return key ? p.modifiers[key].var_title : null;
-        });
+    const category = categoryLookup[categoryId][0];
+    const variants = variantsLookup[product.id];
 
-        const image = {
-            domain: p.images[0] ? p.images[0].segments.domain : null,
-            suffix: p.images[0] ? p.images[0].segments.suffix : null
-        };
+    const modifiers = _.chain(variants)
+      .flatMap(variant =>
+        _.without(Object.keys(variant.description), 'parent').filter(key =>
+          Boolean(variant.description[key])
+        )
+      )
+      .uniq()
+      .value();
 
-        return {
-            '@search.action': 'upload',
-            'id': p.id,
-            'productId': modifierKeys.length ? p.modifiers[modifierKeys[0]].data.product : p.id,
-            'color': color,
-            'size': size,
-            'sku': p.sku.replace(/^P\*/, ''),
-            'price': Number(p.price.value.substring(1).replace(',', '')),
-            'image_domain': image.domain,
-            'image_suffix': image.suffix
-        };
-    });
+    const [color, size] = ['color', 'size'].map(modifier =>
+      _.chain(variants)
+        .map(variant => variant.description[modifier])
+        .uniq()
+        .filter(Boolean)
+        .value()
+    );
+
+    const image = imagesLookup[product.relationships.main_image.data.id][0];
 
     return {
-        categories: categoryIndex,
-        products: productIndex,
-        variants: variantIndex
+      '@search.action': 'upload',
+      id: product.id,
+      title: product.name,
+      description: product.description,
+      category: category.parent.name,
+      categoryId: category.parent.id,
+      subcategory: category.name,
+      subcategoryId: category.id,
+      modifiers: modifiers,
+      color: color, // ToDo: check how empty arrays are created in Azure Search
+      size: size,
+      price: Number(product.price[0].amount),
+      image: image.link.href
     };
-}).then((indexes) => {
-    const servicename = process.env.SEARCH_APP_NAME;
-    const apikey = process.env.SEARCH_API_KEY;
-    const headers = {
-        'Content-Type': 'application/json',
-        'api-key': apikey
+  });
+
+  console.log(`Collecting data for the variants index`);
+
+  // ToDo: double check that products without modifiers (no variations relations)
+  // actually have their single variant created in Moltin
+
+  const variantIndex = allVariants.map(variant => {
+    const [color, size] = ['color', 'size'].map(
+      modifier => variant.description[modifier] || null
+    );
+
+    const image = imagesLookup[variant.relationships.main_image.data.id][0];
+
+    return {
+      '@search.action': 'upload',
+      id: variant.id,
+      productId: variant.description.parent,
+      color: color,
+      size: size,
+      sku: variant.sku,
+      price: Number(variant.price[0].amount),
+      image: image.link.href
     };
+  });
 
-    return Promise.all(Object.keys(indexes).map(index => {
-        console.log(`Creatings or Updating ${index} index definition in Azure Search`);
+  const indexes = {
+    categories: categoryIndex,
+    products: productIndex,
+    variants: variantIndex
+  };
 
-        return request({
-            url: `https://${servicename}.search.windows.net/indexes/${index}?api-version=2015-02-28`,
-            headers,
-            method: 'PUT',
-            body: fs.createReadStream(path.resolve(__dirname, `${index}.json`))
-        }).then(() => {
-            console.log(`Loading data for ${index} index in Azure Search`);
+  const servicename = process.env.SEARCH_APP_NAME;
+  const apikey = process.env.SEARCH_API_KEY;
+  const headers = {
+    'Content-Type': 'application/json',
+    'api-key': apikey
+  };
 
-            return request({
-                url: `https://${servicename}.search.windows.net/indexes/${index}/docs/index?api-version=2015-02-28`,
-                headers,
-                method: 'POST',
-                json: true,
-                body: { 
-                    value: indexes[index]
-                }
-            });
-        });
-    }));
-}).then(() => {
-    console.log('All said and done');
-}).catch((error) => {
-    console.log(error);
-});
+  for (let index of Object.keys(indexes)) {
+    console.log('Deleting %s index in Azure Search', index);
+    try {
+      await request({
+        url: `https://${servicename}.search.windows.net/indexes/${index}?api-version=2016-09-01`,
+        headers,
+        method: 'DELETE'
+      });
+    } catch (error) {
+      console.error(error);
+    }
+
+    console.log('(Re)creating %s index in Azure Search', index);
+    await request({
+      url: `https://${servicename}.search.windows.net/indexes/${index}?api-version=2016-09-01`,
+      headers,
+      method: 'PUT',
+      body: fs.createReadStream(path.resolve(__dirname, `${index}.json`))
+    });
+
+    console.log('Loading data for %s index in Azure Search', index);
+    await request({
+      url: `https://${servicename}.search.windows.net/indexes/${index}/docs/index?api-version=2016-09-01`,
+      headers,
+      method: 'POST',
+      json: true,
+      body: {
+        value: indexes[index]
+      }
+    });
+  }
+
+  console.log('All said and done');
+})();
