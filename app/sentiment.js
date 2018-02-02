@@ -7,7 +7,9 @@ module.exports = {
   detect: function(text, language = 'en', threshold = 0.05) {
     return request({
       method: 'POST',
-      url: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment`,
+      url:
+        process.env.SENTIMENT_ENDPOINT ||
+        'https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment',
       headers: {
         'Content-Type': 'application/json',
         'Ocp-Apim-Subscription-Key': apiKey
@@ -59,7 +61,9 @@ module.exports = {
       (session, args, next) => {
         const answer = builder.EntityRecognizer.parseBoolean(args.response);
         if (typeof answer !== 'undefined') {
-          next(args);
+          next({
+            response: answer
+          });
         } else {
           this.detect(args.response)
             .then(result => next(result))

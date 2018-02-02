@@ -45,6 +45,7 @@ Set the following environment variables:
 * `SEARCH_API_KEY`- your API key to the [Azure Search](https://azure.microsoft.com/en-us/services/search) service
 * `LUIS_ENDPOINT` - the URL of your published LUIS model. Please keep the `Add verbose flag` on and remove `&q=` from the URL. THe bot framework will add it.
 * `SENTIMENT_API_KEY` - your API key to the [Text Analytics](https://www.microsoft.com/cognitive-services/en-us/text-analytics-api) service.
+* `SENTIMENT_ENDPOINT` - the enpoint of yout [Text Analytics](https://www.microsoft.com/cognitive-services/en-us/text-analytics-api) service. Defaults to `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment`
 
 If you would like to connect the [Bing Spell Check](https://www.microsoft.com/cognitive-services/en-us/bing-spell-check-api) service, you would do so in LUIS when publishing your endpoint. This integration is transparent to the app and all you do is provision your Azure subscription key to the service and connect it to your LUIS app.
 
